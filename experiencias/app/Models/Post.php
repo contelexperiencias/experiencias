@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class categoria extends Model
+class Post extends Model
 {
     use HasFactory;
-    public $timestamps = false;
     protected $fillable = [
         'slug',
         'title',
@@ -17,14 +16,11 @@ class categoria extends Model
         'descripcion',
         'urlfoto',
         'visitas',
-        'orden'
+        'orden',
+        'categoria_id'
     ];
 
-    public function producto(){
-        return $this->hasMany("App\Producto");
-    }
-
-    public function Post(){
-        return $this->hasMany("App\Post");
+    public function Categoria(){
+        return $this->belongsTo("App\Categoria");
     }
 }
