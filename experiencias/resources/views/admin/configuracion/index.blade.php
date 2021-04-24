@@ -4,6 +4,7 @@
 <div class="row">
 @include('admin.submenu')
 <div class="col-sm-10">
+<h4 class="text-center">CONFIGURACIÓN</h4>
 {!! Form::open(['route'=>['configuracion.update',$registro],'method'=>'PUT','files'=>true]) !!}
 <div class="jumbotron">
 <div class="form-group">
