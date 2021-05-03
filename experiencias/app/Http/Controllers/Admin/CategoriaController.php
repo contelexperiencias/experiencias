@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use Illuminate\Support\Str;
 use Image;
+use Session;
 
 class CategoriaController extends Controller
 {

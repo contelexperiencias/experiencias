@@ -27,6 +27,7 @@ Route::group(['prefix'=>'admin','middleware' => 'auth'], function(){
     Route::resource('/post', App\Http\Controllers\Admin\PostController::class);  
     Route::resource('/carrusel', App\Http\Controllers\Admin\CarruselController::class);
     Route::resource('/empresa', App\Http\Controllers\Admin\EmpresaController::class);    
+    Route::resource('/destino', App\Http\Controllers\Admin\DestinoController::class); 
 
 });
 // rutas publicas
@@ -38,7 +39,5 @@ Route::get('/experiencias/{categoria}', [App\Http\Controllers\FrontController::c
 Route::get('/experiencias/{categoria}/{producto}', [App\Http\Controllers\FrontController::class, 'producto']);
 Route::get('/blog', [App\Http\Controllers\FrontController::class, 'blog']);
 Route::get('/blog/{post}', [App\Http\Controllers\FrontController::class, 'post']);
-
 Route::get('/contacto', [App\Http\Controllers\FrontController::class, 'contacto']);
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,11 +14,16 @@ class producto extends Model
         'title',
         'description',
         'nombre',
-        'descripcion',
+        'descripcion',        
         'urlfoto',
         'visitas',
         'orden',
-        'categoria_id'
+        'categoria_id',
+        'tarifa',
+        'familia',
+        'pareja',
+        'grupo',
+        'solo'
     ];
     public function Categoria(){
         return $this->belongsTo("App\Categoria");
