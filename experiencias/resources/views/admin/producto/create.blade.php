@@ -43,7 +43,7 @@
                <span class="anchor"><strong>DESTINOS</strong></span>
                @forelse ($destinos as $item)
                <ul class="items">
-                    <li> {!! Form::checkbox($item->nombre, $item->id) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li>                   
+                    <li> {!! Form::checkbox($item->slug, $item->id) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li>                   
                 </ul>                              
                @empty                       
                @endforelse 

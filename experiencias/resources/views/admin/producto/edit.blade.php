@@ -58,7 +58,7 @@
                     @empty
                     @endforelse
                    
-                    <li> {!! Form::checkbox($item->nombre, $item->id, $activochk) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li> 
+                    <li> {!! Form::checkbox($item->slug, $item->id, $activochk) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li> 
 
 
           
