@@ -94,23 +94,23 @@ ul li:hover {
                 <div class="row">
                 <div class="col-lg-2" style="line-height: 0.5; margin-top:2%;">
                 </div>
-                  <div class="col-lg-4" style="line-height: 0.5; margin-top:2%;">
+                  <div class="col-lg-4" style="line-height: 0.5; margin-top:1%;">
                          <p style="text-align: left; color:black; "><a>Quienes somos</a></P>    
                          <p style="text-align: left; color:black; "><a>Ayuda</a></P>                      
                          <p style="text-align: left; color:black; "><a>Blog</a></P>                      
                          <p style="text-align: left; color:black;"><a>FAQ'S</a></P> 
                         
                   </div>
-                      <div class="col-lg-4" style="line-height: 0.5; margin-top:2%;">
+                      <div class="col-lg-4" style="line-height: 0.5; margin-top:5%;">
                       <div  style="text-align: right;">
                           <a href="https://www.youtube.com/channel/UCsxX_6skG3RYIp8AtF1PZww">
-                          <img style= " width: 17%;"src="/img/configuracion/youtube-logo.png" alt="">
+                          <img style= " width: 12%;"src="/img/configuracion/youtube-logo.png" alt="">
                           </a>
                           <a href="https://www.facebook.com/ContelExperiencias">
-                          <img style= " width: 15%;"src="/img/configuracion/facebook-logo.png" alt="">
+                          <img style= " width: 12%;"src="/img/configuracion/facebook-logo.png" alt="">
                           </a> 
                           <a href="https://twitter.com/contelexperiencias">
-                          <img style= "width: 15%;"  src="/img/configuracion/twitter-logo.png" >
+                          <img style= "width: 12%;"  src="/img/configuracion/twitter-logo.png" >
                           </a>                          
                         </div>
                     </div>
