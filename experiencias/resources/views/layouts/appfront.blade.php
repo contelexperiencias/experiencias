@@ -16,6 +16,8 @@
     <link rel="shortcut icon" href="/img/configuracion/{{$config->urlfavicon}}" type="image/png" />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/buttons.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -29,26 +31,82 @@
         .bg-warning{ background:#FFC926 !important}
         *{padding:0;margin:0;}
 
-body{
-	font-family: 'Muli', sans-serif;
-	font-size:18px;
-	background-color:#CCC;
-}
-ul {
-    
-}
+        body{
+            font-family: 'Muli', sans-serif;
+            font-size:18px;
+            background-color:#CCC;
+        }
+        ul {
+            
+        }
 
-ul li {
-    display: inline-block;
-    padding-top: 5px;
-    margin-right: 10px;
-    border-top: 4px solid transparent;
-}
+        ul li {
+            display: inline-block;
+            padding-top: 5px;
+            margin-right: 10px;
+            border-top: 4px solid transparent;
+        }
 
-ul li:hover {
-    border-bottom: 4px solid #E8C300;
-}
-</style>
+        ul li:hover {
+            border-bottom: 4px solid #E8C300;
+        }
+        .width-75 {
+            width: 85px!important;
+            height: 75px!important;
+
+        }
+        .estilo-x {
+font-size: calc(0.5em + 0.5vw);
+
+padding: 0.5em;
+margin: 0.5em;}
+
+.searchbar{
+
+    margin-bottom: auto;
+    margin-top: 2%;
+    height: 27px;
+    background-color: #E8C300;
+    border-radius: 5px;
+    padding: 5px;
+    width: 30%;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 20px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 45%;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 20px;
+    width: 20px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+    </style>
 </head>
 <body class="bg-danger">
 </div>
@@ -89,16 +147,16 @@ ul li:hover {
 
 
         <footer style="font-size: 0.9rem;">
-      
+      <div class="container">
                 <div style="margin-bottom: 5%; margin-top:2%; text-align: left; background-color:#71D7E4; " class="container"> 
                 <div class="row">
                 <div class="col-lg-2" style="line-height: 0.5; margin-top:2%;">
                 </div>
                   <div class="col-lg-4" style="line-height: 0.5; margin-top:1%;">
-                         <p style="text-align: left; color:black; "><a>Quienes somos</a></P>    
-                         <p style="text-align: left; color:black; "><a>Ayuda</a></P>                      
-                         <p style="text-align: left; color:black; "><a>Blog</a></P>                      
-                         <p style="text-align: left; color:black;"><a>FAQ'S</a></P> 
+                         <p style="text-align: left; color:black; " ><a class="estilo-x">Quienes somos</a></P>    
+                         <p style="text-align: left; color:black; "><a class="estilo-x">Ayuda</a></P>                      
+                         <p style="text-align: left; color:black; "><a class="estilo-x">Blog</a></P>                      
+                         <p style="text-align: left; color:black;"><a class="estilo-x">FAQ'S</a></P> 
                         
                   </div>
                       <div class="col-lg-4" style="line-height: 0.5; margin-top:5%;">
@@ -121,6 +179,7 @@ ul li:hover {
                      
                 </div>
 
+                </div>
                 </div>
             </footer>
 </body>

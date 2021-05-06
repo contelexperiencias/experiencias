@@ -14,6 +14,19 @@ class Carrusel extends Model
         'descripcion',
         'urlfoto',
         'link',
-        'orden'
+        'orden',
+        'title',
+        'title2',
+        'title3',
+        'descripcion2',
+        'descripcion3',
+        'link2',
+        'link3',
+        'urlfoto1',
+        'urlfoto2',
+        'urlfoto3',
+        'encabezado',
+        'subencabezado'
+ 
     ];
 }

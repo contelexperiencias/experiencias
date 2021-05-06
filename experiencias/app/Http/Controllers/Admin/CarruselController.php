@@ -26,11 +26,42 @@ class CarruselController extends Controller
             $imagen = $request->file('urlfoto');
             $nuevonombre = 'artesanias_'.time().'.'.$imagen->guessExtension();
             Image::make($imagen->getRealPath())
-            ->fit(1080,1080,function($constraint){ $constraint->upsize();  })
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
             ->save( public_path('/img/carrusel/'.$nuevonombre));
 
             $carrusel->urlfoto = $nuevonombre;
+        }     
+        if($request->hasFile('urlfoto1')){
+
+            $imagen1 = $request->file('urlfoto1');
+            $nuevonombre1 = 'post1'.time().'.'.$imagen1->guessExtension();
+            Image::make($imagen1->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre1));
+
+            $carrusel->urlfoto1 = $nuevonombre1;
         }
+        if($request->hasFile('urlfoto2')){
+
+            $imagen2 = $request->file('urlfoto2');
+            $nuevonombre2 = 'post2'.time().'.'.$imagen2->guessExtension();
+            Image::make($imagen2->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre2));
+
+            $carrusel->urlfoto2 = $nuevonombre2;
+        }
+        if($request->hasFile('urlfoto3')){
+
+            $imagen3 = $request->file('urlfoto3');
+            $nuevonombre3 = 'post3'.time().'.'.$imagen3->guessExtension();
+            Image::make($imagen3->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre3));
+
+            $carrusel->urlfoto3 = $nuevonombre3;
+        }
+        echo $carrusel;
         $carrusel->save();
         return redirect('/admin/carrusel');
 
@@ -51,10 +82,40 @@ class CarruselController extends Controller
             
             $nuevonombre = 'artesanias_'.time().'.'.$imagen->guessExtension();
             Image::make($imagen->getRealPath())
-            ->fit(1080,1080,function($constraint){ $constraint->upsize();  })
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
             ->save( public_path('/img/carrusel/'.$nuevonombre));
 
             $carrusel->urlfoto = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto1')){
+
+            $imagen1 = $request->file('urlfoto1');
+            $nuevonombre1 = 'post1'.time().'.'.$imagen1->guessExtension();
+            Image::make($imagen1->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre1));
+
+            $carrusel->urlfoto1 = $nuevonombre1;
+        }
+        if($request->hasFile('urlfoto2')){
+
+            $imagen2 = $request->file('urlfoto2');
+            $nuevonombre2 = 'post2'.time().'.'.$imagen2->guessExtension();
+            Image::make($imagen2->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre2));
+
+            $carrusel->urlfoto2 = $nuevonombre2;
+        }
+        if($request->hasFile('urlfoto3')){
+
+            $imagen3 = $request->file('urlfoto3');
+            $nuevonombre3 = 'post3'.time().'.'.$imagen3->guessExtension();
+            Image::make($imagen3->getRealPath())
+            ->fit(1060,600,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/carrusel/'.$nuevonombre3));
+
+            $carrusel->urlfoto3 = $nuevonombre3;
         }
        
         $carrusel->save();
