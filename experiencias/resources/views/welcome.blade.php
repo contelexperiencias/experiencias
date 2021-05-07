@@ -17,28 +17,28 @@
             <img src="/img/carrusel/{{$item->urlfoto}}" class="d-block w-100 img-fluid" alt="{{$item->frase}}" style="image-rendering: pixelated;"> 
             <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 carousel-caption  pb-5" style="left: 0%!important; top: 5%!important; height: 15%;">
-            <h2>{{$item->encabezado}}</h2>
-            <h5>{{$item->subencabezado}}</h5>
+            <a>{{$item->encabezado}}</a>
+            <a>{{$item->subencabezado}}</a>
             </div>
             </div>
             <div class="carousel-caption ml-auto mr-auto mx-auto">  
             <div class="row" style="flex-wrap: nowrap;">  
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto1}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                 <p class="estilo-x">{{$item->title}}</p>
-                 <p class="estilo-x">{{$item->descripcion}}<p>
+                 <a class="">{{$item->title}}</a>
+                 <a class="">{{$item->descripcion}}<a>
                  <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius ">VER MÁS</a>
             </div>  
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto2}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                <p class="estilo-x">{{$item->title2}}</p>
-                 <p class="estilo-x">{{$item->descripcion2}}<p>
+                <a class="">{{$item->title2}}</a>
+                 <a class="">{{$item->descripcion2}}<a>
                  <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a>
             </div> 
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto3}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                <p class="estilo-x">{{$item->title3}}</p>
-                 <p class="estilo-x">{{$item->descripcion3}}<p>
+                <a class="">{{$item->title3}}</a>
+                 <a class="">{{$item->descripcion3}}<a>
                  <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a>
             </div> 
             </div>  
@@ -82,7 +82,54 @@
       </div>
 
 </div>
-<div class="col-sm-10">
+<div class="wrap">
+		<h1>Puedes filtrar la la experiencia que buscas</h1>
+		<div class="store-wrapper">
+			<div class="category_list">
+				<a href="#" class="category_item" category="all">Todo</a>
+				<a href="#" class="category_item" category="1">Naturaleza</a>
+				<a href="#" class="category_item" category="3">Gastronomía</a>
+				<a href="#" class="category_item" category="2">Aventura</a>
+				<a href="#" class="category_item" category="5">Alojamiento</a>
+				<a href="#" class="category_item" category="6">Transportación</a>
+			</div>
+			<section class="products-list">
+				<div class="product-item" category="1">
+					<img src="images/laptop_hp.jpg" alt="" >
+					<a href="#">Laptop Hp</a>
+				</div>
+				<div class="product-item" category="1">
+					<img src="images/laptop_toshiba.jpg" alt="" >
+					<a href="#">Laptop Toshiba</a>
+				</div>
+				<div class="product-item" category="3">
+					<img src="images/samsung_galaxy.jpg" alt="" >
+					<a href="#">Samsung Galaxy</a>
+				</div>
+				<div class="product-item" category="3">
+					<img src="images/iphone.jpg" alt="" >
+					<a href="#">Iphone 7</a>
+				</div>
+				<div class="product-item" category="2">
+					<img src="images/pc_hp.jpg" alt="" >
+					<a href="#">PC Hp</a>
+				</div>
+				<div class="product-item" category="2">
+					<img src="images/pc_lenovo.jpg" alt="" >
+					<a href="#">PC Lenovo</a>
+				</div>
+				<div class="product-item" category="5">
+					<img src="images/monitor_asus.jpg" alt="" >
+					<a href="#">Monitor Asus</a>
+				</div>
+				<div class="product-item" category="5">
+					<img src="images/jbl.jpg" alt="" >
+					<a href="#">Audifonos JBL</a>
+				</div>
+			</section>
+		</div>
+	</div>
+<div class="col-sm-8">
 
    <div class="container h-100">
    <form action=""> 
@@ -94,22 +141,28 @@
       </div>
       </form>
     </div>
-    <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img data-src="..." alt="...">
+
+    <div class="row" style="padding-top: 3%;">
+    @forelse ($producto as $item)
+  <div class="col-sm-6 col-md-4"> 
+    <div class="thumbnail">   
+      <img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="...">
       <div class="caption">
-        <h3>Título de la imagen</h3>
-        <p>...</p>
+        <h3>{{$item->title}}</h3>
+        {!!$item->descripcion!!}
         <p>
-          <a href="#" class="btn btn-primary" role="button">Botón</a>
-          <a href="#" class="btn btn-default" role="button">Botón</a>
+       
+          <a href="#" class="btn btn-info btn-xs btn-radius" role="button">Aventura</a>
+          <a href="#" class="btn btn-success btn-xs btn-radius" role="button">Naturaleza</a>
+          <a href="#" class="btn btn-warning btn-xs btn-radius" role="button">Isla Mujeres</a>
         </p>
-      </div>
-    </div>
+      </div>    
+    </div>  
   </div>
+  @empty
+        @endforelse
 </div>
-   
+
   <!-- <form action="">
     <div class="input-group">
       <input type="text" class="form-control" id="search" placeholder="buscar">
@@ -119,6 +172,10 @@
      </div>
   </form> -->
 
+</div>
+<div class=" container row"> 
+                <img src="/img/configuracion/tortuga marina.jpg" alt="footer" style="width: 103%;">
+                     
 </div>
 </div>
 @endsection

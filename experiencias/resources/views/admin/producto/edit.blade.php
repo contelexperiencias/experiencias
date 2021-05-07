@@ -34,6 +34,7 @@
                     <label for="descripcion">INGRESE DESCRIPCIÓN</label>
                     {!! Form::textarea('descripcion',$producto->descripcion,['class'=>'form-control']) !!}
                 </div>
+
                 <div class="form-group">
                     <label for="nombre">INGRESE TARIFA</label>
                     {!! Form::text('tarifa',$producto->tarifa,['class'=>'form-control','maxlength'=>'67']) !!}
@@ -114,6 +115,6 @@
     </div>
 </div>
 <script>
-    CKEDITOR.replace( 'descripcion' );
+   CKEDITOR.replace( 'descripcion' );
 </script>
 @endsection

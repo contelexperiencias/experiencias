@@ -17,9 +17,11 @@
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="/css/buttons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-3.2.1.js"></script>
+	<script src="/js/script.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
     <style>

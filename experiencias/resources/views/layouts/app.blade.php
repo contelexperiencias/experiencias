@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.16.0/full-all/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.16.0/full-all/ckeditor.js"></script> -->
 </head>
 <body>
     <div id="app">
