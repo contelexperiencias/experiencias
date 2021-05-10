@@ -82,51 +82,73 @@
       </div>
 
 </div>
+
+
+
   <div class="wrap">
 		<h1>Puedes filtrar la la experiencia que buscas</h1>
 		<div class="store-wrapper">
-			<div class="category_list">
-				<a href="#" class="category_item" category="all">Todo</a>
+		
+			<section class="products-list col-sm-10">
+      @forelse ($producto as $item)
+      <div class="thumbnail  product-item" category="{{$item->categoria_id}}">
+					<img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="" >
+					<a href="#"><strong>{{$item->title}}</strong></a>
+          <a>{!!$item->descripcion!!}</a>
+          <p>       
+          <a href="#" style="display: inline;" class="btn btn-info btn-xs btn-radius" role="button">Aventura</a>
+          <a href="#" style="display: inline;" class="btn btn-success btn-xs btn-radius" role="button">Naturaleza</a>
+          <a href="#" style="display: inline;" class="btn btn-warning btn-xs btn-radius" role="button">Isla Mujeres</a>
+        </p>
+				</div>
+
+      @empty
+        @endforelse
+			
+			</section>
+      
+      <div class="category_list col-sm-2">
+      <section class="facet">
+      <a class="collapse-controle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            App benifits tittle one goes here
+                            <span class="expand-icon-wrap"><i class="fa expand-icon"></i></span>
+                        </a>
+  <div class="facet-header">
+    <button type="button" class="btn btn-link facet-toggle collapsed collapse-controle" data-toggle="collapse" href="#facetCheckboxes" aria-expanded="false" aria-controls="collapseExample">
+      <strong class="facet-title">Experiencia</strong>
+    </button>
+  </div>
+  <div class="facet-body collapse" id="facetCheckboxes" style="">
+  <ul class="facet-group">
+      <li class="facet-group-item" style="display: block;">
+        <label class="form-check-label">
+          <input class=" category_item form-check-input" type="checkbox" value="" category="all">
+         <a>Todo</a>
+        </label>
+      </li>
+      @forelse ($categorias as $item)
+      <li class="facet-group-item" style="display: block;">
+        <label class="form-check-label">
+          <input class=" category_item form-check-input" type="checkbox" value="" category="{{$item->id}}">
+         <a>{{$item->nombre}}</a>
+        </label>
+      </li>
+      @empty
+        @endforelse
+   
+    </ul>
+   
+    
+  </div>
+</section>
+
+				<!-- <a href="#" class="category_item" category="all">Todo</a>
 				<a href="#" class="category_item" category="1">Naturaleza</a>
 				<a href="#" class="category_item" category="3">Gastronomía</a>
 				<a href="#" class="category_item" category="2">Aventura</a>
 				<a href="#" class="category_item" category="5">Alojamiento</a>
-				<a href="#" class="category_item" category="6">Transportación</a>
+				<a href="#" class="category_item" category="6">Transportación</a> -->
 			</div>
-			<section class="products-list">
-				<div class="product-item" category="1">
-					<img src="images/laptop_hp.jpg" alt="" >
-					<a href="#">Laptop Hp</a>
-				</div>
-				<div class="product-item" category="1">
-					<img src="images/laptop_toshiba.jpg" alt="" >
-					<a href="#">Laptop Toshiba</a>
-				</div>
-				<div class="product-item" category="3">
-					<img src="images/samsung_galaxy.jpg" alt="" >
-					<a href="#">Samsung Galaxy</a>
-				</div>
-				<div class="product-item" category="3">
-					<img src="images/iphone.jpg" alt="" >
-					<a href="#">Iphone 7</a>
-				</div>
-				<div class="product-item" category="2">
-					<img src="images/pc_hp.jpg" alt="" >
-					<a href="#">PC Hp</a>
-				</div>
-				<div class="product-item" category="2">
-					<img src="images/pc_lenovo.jpg" alt="" >
-					<a href="#">PC Lenovo</a>
-				</div>
-				<div class="product-item" category="5">
-					<img src="images/monitor_asus.jpg" alt="" >
-					<a href="#">Monitor Asus</a>
-				</div>
-				<div class="product-item" category="5">
-					<img src="images/jbl.jpg" alt="" >
-					<a href="#">Audifonos JBL</a>
-				</div>
-			</section>
 		</div>
 	</div>
   <div class= "row container">
@@ -137,33 +159,33 @@
 <section class="facet">
   <div class="facet-header">
     <button type="button" class="btn btn-link facet-toggle collapsed" data-toggle="collapse" href="#facetCheckboxes" aria-expanded="false" aria-controls="collapseExample">
-      <strong class="facet-title">Facet Heading</strong>
+      <strong class="facet-title">Experiencia</strong>
     </button>
   </div>
   <div class="facet-body collapse" id="facetCheckboxes" style="">
     <ul class="facet-group">
       <li class="facet-group-item">
         <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Option one
+          <input class=" category_item form-check-input" type="checkbox" value="" category="1">
+         Naturaleza
+        </label>
+      </li>
+      <li class="facet-group-item">
+        <label class="form-check-label">
+          <input class=" category_item form-check-input" type="checkbox" value="" category="2">
+          Gastronomía
         </label>
       </li>
       <li class="facet-group-item">
         <label class="form-check-label">
           <input class="form-check-input" type="checkbox" value="">
-          Option two
+          Alojamiento
         </label>
       </li>
       <li class="facet-group-item">
         <label class="form-check-label">
           <input class="form-check-input" type="checkbox" value="">
-          Option three
-        </label>
-      </li>
-      <li class="facet-group-item">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Option four
+          Vida nocturna
         </label>
       </li>
     </ul>
@@ -172,25 +194,43 @@
         <li class="facet-group-item">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Option five
+            Estilo de vida
           </label>
         </li>
         <li class="facet-group-item">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Option six
+            VIP
           </label>
         </li>
         <li class="facet-group-item">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Option seven
+            Arte
           </label>
         </li>
         <li class="facet-group-item">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Option eight
+           Aventura
+          </label>
+        </li>
+        <li class="facet-group-item">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+           Transportación
+          </label>
+        </li>
+        <li class="facet-group-item">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+           Memorias
+          </label>
+        </li>
+        <li class="facet-group-item">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="">
+           Promociones
           </label>
         </li>
       </ul>
@@ -219,7 +259,7 @@
   <div class="row" style="padding-top: 3%;">
     @forelse ($producto as $item)
     <div class="col-sm-6 col-md-4"> 
-    <div class="thumbnail">   
+    <div class="thumbnail product-item" category="{{$item->categoria_id}}">   
       <img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="...">
       <div class="caption">
         <h3>{{$item->title}}</h3>
