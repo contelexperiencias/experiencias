@@ -8,6 +8,9 @@ $(document).ready(function(){
 	$('.category_item').click(function(){
 		var catProduct = $(this).attr('category');
 		console.log(catProduct);
+		if(catProduct == 1){
+			
+		}
 
 		// AGREGANDO CLASE ACTIVE AL ENLACE SELECCIONADO
 		$('.category_item').removeClass('ct_item-active');
