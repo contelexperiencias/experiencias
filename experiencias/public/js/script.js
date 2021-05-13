@@ -6,10 +6,26 @@ $(document).ready(function(){
 	// FILTRANDO PRODUCTOS  ============================================
 
 	$('.category_item').click(function(){
+		$(this).attr('value','1');
+		var checksactivos = $('.category_item');
+		console.log(checksactivos);
 		var catProduct = $(this).attr('category');
-		console.log(catProduct);
+
+		if(catProduct == "all"){
+			function showAll(){
+				$('.product-item').show();
+				$('.product-item').css('transform', 'scale(1)');
+			} setTimeout(showAll,400);
+
+		}
+		
+		var che = document.getElementById(catProduct);
+		// console.log(che);
+		if(catProduct != "all" && che.checked){
+		
+		// console.log(catProduct);
 		var municipio = document.getElementById("Cozumel"); 
-		console.log(municipio);
+		// console.log(municipio);
 		
 			municipio.style.fill = '#e8c300';
 	    
@@ -29,12 +45,20 @@ $(document).ready(function(){
 			$('.product-item[category="'+catProduct+'"]').show();
 			$('.product-item[category="'+catProduct+'"]').css('transform', 'scale(1)');
 		} setTimeout(showProduct,400);
-	});
+	}
+	else{
+		function showProduct(){
+			$('.product-item[category="'+catProduct+'"]').hide();
+			// $('.product-item[category="'+catProduct+'"]').css('transform', 'scale(1)');
+		} setTimeout(showProduct,400);
+	}
+
+});
 
 	
 	$('.destino_item').click(function(){
 		var destProduct = $(this).attr('destino');
-		console.log(destProduct);
+		// console.log(destProduct);
 		// var municipio = document.getElementById("Cozumel"); 
 		// console.log(municipio);
 		
@@ -53,10 +77,18 @@ $(document).ready(function(){
 
 		// MOSTRANDO PRODUCTOS =========================
 		function showProduct(){
-		
+		//  if($('.btn-warning[destinos="'+destProduct+'"]') == destProduct ){
+		// 	console.log($('.product-item[destinos="'+destProduct+'"]'));
 			
+		// 	$('.product-item').attr("destinos",''+destProduct+'');
+		// 	$('.product-item[destinos="'+destProduct+'"]').show();
+		// 	$('.product-item[destinos="'+destProduct+'"]').css('transform', 'scale(1)');
+
+		//  }
+			 
 			$('.product-item').attr("destinos",''+destProduct+'');
-			console.log($('.product-item[destinos="'+destProduct+'"]'));
+			$('.product-item').attr("destinos",''+destProduct+'');
+			//console.log($('.product-item[destinos="'+destProduct+'"]'));
 			$('.product-item[destinos="'+destProduct+'"]').show();
 			$('.product-item[destinos="'+destProduct+'"]').css('transform', 'scale(1)');
 		} setTimeout(showProduct,400);

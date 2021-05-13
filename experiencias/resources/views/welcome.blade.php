@@ -141,15 +141,15 @@
                   </div>
                   <div class="facet-body collapse" id="facetCheckboxes" style="">
                     <ul class="facet-group">
-                      <li class="facet-group-item" style="display: block;">
+                      <!-- <li class="facet-group-item" style="display: block;">
                         <label class="form-check-label">
-                        <input class=" category_item form-check-input" type="checkbox" value="" category="all"><a>Todo</a>
+                        <input id="all" class=" category_item form-check-input" type="checkbox" value="" category="all"><a>Todo</a>
                         </label>
-                      </li>
+                      </li> -->
                             @forelse ($categorias as $item)
                       <li class="facet-group-item" style="display: block;">
                             <label class="form-check-label">
-                              <input class=" category_item form-check-input" type="checkbox" value="" category="{{$item->id}}"><a>{{$item->nombre}}</a>
+                              <input id="{{$item->id}}" class=" category_item form-check-input" type="checkbox" value="" category="{{$item->id}}"><a>{{$item->nombre}}</a>
                             </label>
                       </li>
                             @empty
