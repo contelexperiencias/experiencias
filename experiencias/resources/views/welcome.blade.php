@@ -149,7 +149,7 @@
                             @forelse ($categorias as $item)
                       <li class="facet-group-item" style="display: block;">
                             <label class="form-check-label">
-                              <input id="{{$item->id}}" class=" category_item form-check-input" type="checkbox" value="" category="{{$item->id}}"><a>{{$item->nombre}}</a>
+                              <input id="{{$item->id}}" class=" category_item form-check-input" type="checkbox" value="{{$item->id}}" category="{{$item->id}}"><a>{{$item->nombre}}</a>
                             </label>
                       </li>
                             @empty
