@@ -66,7 +66,8 @@ $(document).ready(function(){
 						$('.product-item').show();
 						$('.product-item').css('transform', 'scale(1)');
 					} setTimeout(showAll,400);
-		setTimeout(showProduct,400);		
+		setTimeout(showProduct,400);
+				
 
 		}
 		
