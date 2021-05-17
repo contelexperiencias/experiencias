@@ -111,9 +111,9 @@
 		
 			<section class="products-list col-sm-8">
       @forelse ($producto as $item)
-      <div class="thumbnail  product-item" category="{{$item->categoria_id}}" destinos="" >
+      <div id="{{$item->id}}" class="thumbnail  product-item" category="{{$item->categoria_id}}" destinos="" >
 					<img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="" >
-          <a>{{$item->destino_id}}</a>
+          
 					<a href="#"><strong>{{$item->title}}</strong></a>
           <a>{!!$item->descripcion!!}</a>
           <p>       
@@ -121,7 +121,7 @@
           <a href="#" style="display: inline; font-size: 8px;" class="btn btn-success btn-xs btn-radius" role="button">Naturaleza</a>
           @forelse ($relacionProductoDestino as $relitem)
           @if( $relitem->producto_id ==  $item->id)
-          <a destinos="{{$relitem->destino_id}}" style="display: inline; font-size: 8px;" class="btn btn-warning btn-xs btn-radius" role="button">{{$relitem->nombre}}</a>
+          <a id="{{$relitem->producto_id}}_{{$relitem->destino_id}}" destinos="{{$relitem->destino_id}}" style="display: inline; font-size: 8px;" class="btn btn-warning btn-xs btn-radius" role="button">{{$relitem->nombre}}</a>
           @endif
           @empty
         @endforelse
@@ -179,7 +179,7 @@
                                   @forelse ($destinos as $item)
                             <li class="facet-group-item" style="display: block;">
                                   <label class="form-check-label">
-                                    <input class=" destino_item form-check-input" type="checkbox" value="" destino="{{$item->id}}"><a>{{$item->nombre}}</a>
+                                    <input class=" destino_item form-check-input" type="checkbox" value="{{$item->id}}" destino="{{$item->id}}"><a>{{$item->nombre}}</a>
                                   </label>
                             </li>
                                   @empty
