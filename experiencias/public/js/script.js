@@ -368,7 +368,7 @@ $(document).ready(function(){
 			}
 		  });
 
-		  if(conquienSeleccionadas.length > 0){
+		  if(conquienSeleccionadas.length > 0 && destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length == 0){
 			$('.product-item').css('transform', 'scale(0)');
 			
 			$('.product-item').hide();
@@ -381,6 +381,26 @@ $(document).ready(function(){
 			});
 
 		  }
+		  if(conquienSeleccionadas.length > 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length == 0)
+		  {
+
+		  }
+		  if(conquienSeleccionadas.length > 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length > 0)
+		  {			  
+		  }
+		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length > 0)
+		  {			  
+		  }
+		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length > 0)
+		  {			  
+		  }
+		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length == 0)
+		  {			  
+		  }
+
+
+
+
 
 
 	});
