@@ -6,7 +6,11 @@ $(document).ready(function(){
 	// FILTRANDO PRODUCTOS  ============================================
   
 	var categoriasSeleccionadas =new Array();
+	var destinosSeleccionadas =new Array();
+	var conquienSeleccionadas =new Array();
 	$('.category_item').click(function(){
+
+
 		
 		// $(this).attr('value','1');
 		// var checksactivos = $('.category_item');
@@ -14,7 +18,9 @@ $(document).ready(function(){
 		categoriasSeleccionadas =new Array();
 		var catProduct = $(this).attr('category');
 		$('input[type=checkbox]:checked').each(function() {
+			if($(this).attr('category')){
 			categoriasSeleccionadas.push($(this).val());
+			}
 		  });
 		  console.log(categoriasSeleccionadas.length);
 		
@@ -35,21 +41,23 @@ $(document).ready(function(){
 		//var municipio = document.getElementById("Cozumel"); 
 		// console.log(municipio);
 		
-			// municipio.style.fill = '#e8c300';
+		// municipio.style.fill = '#e8c300';
 	    
 
 		// AGREGANDO CLASE ACTIVE AL ENLACE SELECCIONADO
 		$('.category_item').removeClass('ct_item-active');
 		$(this).addClass('ct_item-active');
 
-		// OCULTANDO PRODUCTOS =========================
-		$('.product-item').css('transform', 'scale(0)');
-		function hideProduct(){
-			$('.product-item').hide();
-		} setTimeout(hideProduct,400);
-
+	
 		// MOSTRANDO PRODUCTOS =========================
-		if(categoriasSeleccionadas.length > 0){
+		if(categoriasSeleccionadas.length > 0 && destinosSeleccionadas.length == 0){
+				// OCULTANDO PRODUCTOS =========================
+			$('.product-item').css('transform', 'scale(0)');
+			function hideProduct(){
+			$('.product-item').hide();
+			} setTimeout(hideProduct,400);
+
+			
 			function showProduct(){
 				$.each(categoriasSeleccionadas,function(index,value){
 					$('.product-item[category="'+value+'"]').show();
@@ -61,7 +69,13 @@ $(document).ready(function(){
 			} setTimeout(showProduct,400);
 
 		}
-		else{
+		if(categoriasSeleccionadas.length == 0 && destinosSeleccionadas.length == 0){
+				// OCULTANDO PRODUCTOS =========================
+				$('.product-item').css('transform', 'scale(0)');
+			
+				$('.product-item').hide();
+				 setTimeout(hideProduct,400);
+
 			function showAll(){
 						$('.product-item').show();
 						$('.product-item').css('transform', 'scale(1)');
@@ -69,6 +83,27 @@ $(document).ready(function(){
 		setTimeout(showProduct,400);
 
 
+		}
+		if(destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length == 0){
+			// OCULTANDO PRODUCTOS =========================
+			$('.product-item').css('transform', 'scale(0)');
+			$('.product-item').hide();
+			setTimeout(hideProduct,400);
+	
+			$.each(destinosSeleccionadas,function(index,value){
+			$(".product-item").find('p,a').each(function(){		
+				if($(this).attr("destinos") == value){
+					var productoid = $(this).attr("id").split("_");
+					console.log(productoid);
+				
+					$("#"+productoid[0]).show();
+					$("#"+productoid[0]).css('transform', 'scale(1)');
+			
+	
+				}			
+	
+			});
+		});
 		}
 		
 	// else{
@@ -86,7 +121,7 @@ $(document).ready(function(){
 		var destProduct = $(this).attr('destino');
 		//console.log("destino selecionado:  "+destProduct );
 
-		var destinosSeleccionadas =new Array();
+		 destinosSeleccionadas =new Array();
 		var catProduct = $(this).attr('category');
 		if($('input[type=checkbox]')){
 			switch($(this).val()){
@@ -227,6 +262,27 @@ $(document).ready(function(){
 
 		}
 
+		if(destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length > 0){
+			function showProduct(){
+				$.each(categoriasSeleccionadas,function(index,value){
+					$('.product-item[category="'+value+'"]').show();
+					$('.product-item[category="'+value+'"]').css('transform', 'scale(1)');
+	
+				});
+				// $('.product-item[category="'+catProduct+'"]').show();
+				// $('.product-item[category="'+catProduct+'"]').css('transform', 'scale(1)');
+			} setTimeout(showProduct,400);
+
+
+		}
+
+		if(destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length == 0){
+			function showAll(){
+				$('.product-item').show();
+				$('.product-item').css('transform', 'scale(1)');
+			} setTimeout(showAll,400);
+		}
+
 
 
 
@@ -302,6 +358,31 @@ $(document).ready(function(){
 			// $('.product-item[destinos="'+destProduct+'"]').show();
 			// $('.product-item[destinos="'+destProduct+'"]').css('transform', 'scale(1)');
 		// } setTimeout(showProduct,400);
+	});
+
+	$('.conquien_item').click(function(){
+		conquienSeleccionadas =new Array();
+		$('input[type=checkbox]:checked').each(function() {
+			if($(this).attr('quien')){
+				conquienSeleccionadas.push($(this).val());
+			}
+		  });
+
+		  if(conquienSeleccionadas.length > 0){
+			$('.product-item').css('transform', 'scale(0)');
+			
+			$('.product-item').hide();
+			//  setTimeout(hideProduct,400);
+
+			$.each(conquienSeleccionadas,function(index,value){
+				$('.product-item['+value+'="1"]').show();
+				$('.product-item['+value+'="1"]').css('transform', 'scale(1)');
+
+			});
+
+		  }
+
+
 	});
 	// MOSTRANDO TODOS LOS PRODUCTOS =======================
 

@@ -18,7 +18,7 @@
             <img src="/img/carrusel/{{$item->urlfoto}}" class="d-block w-100 img-fluid" alt="{{$item->frase}}" style="image-rendering: pixelated;"> 
             <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 carousel-caption  pb-5" style="left: 0%!important; top: 5%!important; height: 15%;">
-            <a>{{$item->encabezado}}</a>
+            <h3>{{$item->encabezado}}</h3>
             <a>{{$item->subencabezado}}</a>
             </div>
             </div>
@@ -26,21 +26,21 @@
             <div class="row" style="flex-wrap: nowrap;">  
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto1}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                 <a class="">{{$item->title}}</a>
-                 <a class="">{{$item->descripcion}}<a>
-                 <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius ">VER MÁS</a>
+                 <p class="">{{$item->title}}</p>
+                 <p class="">{{$item->descripcion}}<p>
+                 <p href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius ">VER MÁS</p>
             </div>  
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto2}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                <a class="">{{$item->title2}}</a>
-                 <a class="">{{$item->descripcion2}}<a>
-                 <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a>
+                 <p class="">{{$item->title2}}</p>
+                 <p class="">{{$item->descripcion2}}<p>
+                 <p href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</p>
             </div> 
             <div class="col-sm-4 col-xs-4 col-md-4">      
                 <img src="/img/carrusel/{{$item->urlfoto3}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                <a class="">{{$item->title3}}</a>
-                 <a class="">{{$item->descripcion3}}<a>
-                 <a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a>
+                 <p class="">{{$item->title3}}</p>
+                 <p class="">{{$item->descripcion3}}<p>
+                 <p href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</p>
             </div> 
             </div>  
             </div>
@@ -111,12 +111,13 @@
 		
 			<section class="products-list col-sm-8">
       @forelse ($producto as $item)
-      <div id="{{$item->id}}" class="thumbnail  product-item" category="{{$item->categoria_id}}" destinos="" >
+      <div id="{{$item->id}}" class="thumbnail  product-item" category="{{$item->categoria_id}}" familia="{{$item->familia}}" grupo="{{$item->grupo}}" pareja="{{$item->pareja}}" solo="{{$item->solo}}" >
 					<img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="" >
           
 					<a href="#"><strong>{{$item->title}}</strong></a>
           <a>{!!$item->descripcion!!}</a>
-          <p>       
+          <p> 
+
           <a href="#" style="display: inline; font-size: 8px;" class="btn btn-info btn-xs btn-radius" role="button">Aventura</a>
           <a href="#" style="display: inline; font-size: 8px;" class="btn btn-success btn-xs btn-radius" role="button">Naturaleza</a>
           @forelse ($relacionProductoDestino as $relitem)
@@ -195,22 +196,22 @@
                     <ul class="facet-group">
                       <li class="facet-group-item" style="display: block;">
                         <label class="form-check-label">
-                        <input class=" category_item form-check-input" type="checkbox" value="" quien="all"><i class="bi bi-people"></i> <a>En familia</a>
+                        <input class=" conquien_item form-check-input" type="checkbox" value="familia" quien="familia"><i class="bi bi-people"></i> <a>En familia</a>
                         </label>
                       </li>
                       <li class="facet-group-item" style="display: block;">
                         <label class="form-check-label">
-                        <input class=" category_item form-check-input" type="checkbox" value="" quien="all"><i class="bi bi-chat-left-text"></i><i class="bi bi-chat-right-text"></i> <a>En grupo</a>
+                        <input class=" conquien_item form-check-input" type="checkbox" value="grupo" quien="grupo"><i class="bi bi-chat-left-text"></i><i class="bi bi-chat-right-text"></i> <a>En grupo</a>
                         </label>
                       </li>
                       <li class="facet-group-item" style="display: block;">
                         <label class="form-check-label">
-                        <input class=" category_item form-check-input" type="checkbox" value="" quien="all"><i class="bi bi-suit-heart"> </i><a>En pareja</a>
+                        <input class=" conquien_item form-check-input" type="checkbox" value="pareja" quien="pareja"><i class="bi bi-suit-heart"> </i><a>En pareja</a>
                         </label>
                       </li>
                       <li class="facet-group-item" style="display: block;">
                         <label class="form-check-label ">
-                        <input class=" category_item form-check-input" type="checkbox" value="" quien="all"><i class="bi bi-headphones"> </i><a>Solo</a>
+                        <input class=" conquien_item form-check-input" type="checkbox" value="solo" quien="solo"><i class="bi bi-headphones"> </i><a>Solo</a>
                         </label>
                       </li>
                     </ul> 
