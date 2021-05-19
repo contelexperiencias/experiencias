@@ -223,33 +223,35 @@
 <!--FIN area de PRODUCTOS/FILTROS -->
  
 
-<!--INICIO area de MAPA -->
+<!--INICIO SUSCRIPCIONES -->
+<div class="carousel-inner">
+   <img src="/img/configuracion/tortuga marina.jpg" alt="footer" style="width: 103%;">
+    <div class=" carousel-caption ml-auto mr-auto mx-auto container row" style=" padding-top:2%; ">
+      <div class="text-center col-sm-12">
+                <h3>¿Sabes cuánto vive una tortuga marina?</h3>
+                <p>Suscríbete y te contaremos esta y otras historias.</p>
+                <p>(Sí, también te avisaremos de las nuevas experiecias y descuentos exclusivos cool).</p>    
+      <div class="text-center form-inline" style="justify-content: center;">  
+      <div class="form-group mb-2 ">
+        <label for="staticEmail2" class="sr-only">Email</label>
+        <input type="text" class="form-control-plaintext" id="staticEmail2" placeholder="email">
+      </div>
+      <div class="form-group mb-2">
+        <button style=" border-radius: 1.25rem; background:white; color:black" type="submit" class="btn btn-primary mb-2">suscribete</button>
+      </div>
+    </div>
+    </div>
+    <!--fIN SUSCRIPCIONES -->
+    <!--INICIO POSTBLOG -->
+  <div class="container row">
+    <div>
+      
 
+    </div>
+  </div>
 
-
-   
-<!--FIN area de MAPA -->
-<div class=" container row" style="padding-top:2%"> 
-                <img src="/img/configuracion/tortuga marina.jpg" alt="footer" style="width: 103%;">
                      
 </div>
 </div>
-<!-- <script type="text/javascript">
-        /* State IDS */
-        var states = ['CAN', 'PUM', 'ISL', 'PLY', 'COZ',
-                'JMM', 'FCP', 'OTP'];
-        /* State Names */
-        var state_names = ['Cancún', 'Puerto Morelos', 'Isla Mujeres', 'Playa del Carmen', 'Cozumel', 'Jose Maria Morelos', 'Felipe Carrillo Puerto', 'Othon P. Blanco'];
-        $(function () {
-            $('.map').maphilight({ fade: false });
-        });
-        $(document).ready(function () {
-            $('.path').hover(function () {
-                var id = $(this).attr('id');
-                var state = $.inArray(id, states);
 
-                $('#edo').html(state_names[state]);
-            });
-        });
-</script> -->
 @endsection

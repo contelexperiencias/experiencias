@@ -30,7 +30,7 @@
     <script src="/js/svg.js"></script> -->
     <!-- <script src="/js/jquery.maphighlight.min.js"></script> -->
     <style>
-     
+        ::placeholder { color: white;  }
         .navbar-light .navbar-nav .nav-link {color:black !important}
         .bg-danger{ background:white !important}
         .text-danger{ color:#FF4000 !important}
