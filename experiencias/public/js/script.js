@@ -1,5 +1,31 @@
 $(document).ready(function(){
 
+	//buscador
+	$("#search_input").on("keyup", function() {
+	
+		var value = $(this).val().toLowerCase();
+		var a,txtValue;
+		for (i = 0; i < $('.product-item').length; i++) {
+			a = $('.product-item')[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toLowerCase().indexOf(value) > -1) {
+				$('.product-item')[i].style.display = "";
+			} else {
+				$('.product-item')[i].style.display = "none";
+			}
+		}
+
+
+
+
+		// $(".products-list tr").filter(function() {
+		// $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		// });
+
+
+
+	});
+
 	// AGREGANDO CLASE ACTIVE AL PRIMER ENLACE ====================
 	$('.category_list .category_item[category="all"]').addClass('ct_item-active');
 
@@ -383,19 +409,107 @@ $(document).ready(function(){
 		  }
 		  if(conquienSeleccionadas.length > 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length == 0)
 		  {
+			$('.product-item').css('transform', 'scale(0)');
+			
+			$('.product-item').hide();
+				$.each(destinosSeleccionadas,function(index,value){
+				$(".product-item").find('p,a').each(function(){
+					if($(this).attr("destinos") == value){
+						var productoid = $(this).attr("id").split("_");
+						//console.log($(this).attr("destinos"));
+						function showProduct(){
+							$.each(conquienSeleccionadas,function(index,quien){
+							$('#'+productoid[0]+'.product-item['+quien+'="1"]').show();
+							$("#"+productoid[0]+'.product-item['+quien+'="1"]').css('transform', 'scale(1)');
+						});
+					
+					} setTimeout(showProduct,400);
+		
+		
+					}
+					
+		
+				});
+			});
+			
+
+
+
 
 		  }
 		  if(conquienSeleccionadas.length > 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length > 0)
 		  {			  
+			$('.product-item').css('transform', 'scale(0)');
+			
+			$('.product-item').hide();
+				$.each(destinosSeleccionadas,function(index,value){
+				$(".product-item").find('p,a').each(function(){
+					if($(this).attr("destinos") == value){
+						var productoid = $(this).attr("id").split("_");
+						//console.log($(this).attr("destinos"));
+						function showProduct(){
+							$.each(conquienSeleccionadas,function(index,quien){
+								$.each(categoriasSeleccionadas,function(index,cate){
+									$('#'+productoid[0]+'.product-item[category="'+cate+'"]['+quien+'="1"]').show();
+									$("#"+productoid[0]+'.product-item[category="'+cate+'"]').css('transform', 'scale(1)');
+												
+								});						
+						});
+					
+					} setTimeout(showProduct,400);
+		
+		
+					}
+					
+		
+				});
+			});
 		  }
 		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length > 0 && categoriasSeleccionadas.length > 0)
-		  {			  
+		  {	
+			$('.product-item').css('transform', 'scale(0)');
+			
+			$('.product-item').hide();
+			
+				$.each(categoriasSeleccionadas,function(index,cate){
+				  var div =	$('.product-item[category="'+cate+'"]');
+				  $.each(div,function(index,prod){
+					$.each(destinosSeleccionadas,function(index,dest){
+						$("#"+prod.id).find('p,a').each(function()
+						{
+							if($(this).attr("destinos") == dest)
+							{
+								$("#"+prod.id).show();
+								$("#"+prod.id).css('transform', 'scale(1)');
+							}
+						});
+					});
+	
+				  });
+	
+	
+			
+				});
+					
+					  
 		  }
 		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length > 0)
 		  {			  
+			$('.product-item').css('transform', 'scale(0)');
+			
+			$('.product-item').hide();
+			function showProduct(){
+				$.each(categoriasSeleccionadas,function(index,value){
+					$('.product-item[category="'+value+'"]').show();
+					$('.product-item[category="'+value+'"]').css('transform', 'scale(1)');
+	
+				});				
+			} setTimeout(showProduct,400);
 		  }
 		  if(conquienSeleccionadas.length == 0 && destinosSeleccionadas.length == 0 && categoriasSeleccionadas.length == 0)
 		  {			  
+			$('.product-item').show();
+			$('.product-item').css('transform', 'scale(1)');
 		  }
 
 
