@@ -28,6 +28,7 @@ Route::group(['prefix'=>'admin','middleware' => 'auth'], function(){
     Route::resource('/carrusel', App\Http\Controllers\Admin\CarruselController::class);
     Route::resource('/empresa', App\Http\Controllers\Admin\EmpresaController::class);    
     Route::resource('/destino', App\Http\Controllers\Admin\DestinoController::class); 
+    Route::resource('/curiosidad', App\Http\Controllers\Admin\CuriosidadController::class);  
 
 });
 // rutas publicas

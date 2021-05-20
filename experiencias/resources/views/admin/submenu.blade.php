@@ -10,7 +10,7 @@
  <a href="/admin/post" class="list-group-item list-group-item-action btn btn-primary" role="tab">Blog</a>
  <a href="/admin/carrusel" class="list-group-item list-group-item-action btn btn-primary" role="tab">Carrusel</a>
  <a href="/admin/empresa" class="list-group-item list-group-item-action btn btn-primary" role="tab">Empresa</a>
-
+ <a href="/admin/curiosidad" class="list-group-item list-group-item-action btn btn-primary" role="tab">Curiosidades</a>
 <!-- </li>
 </ul> -->
 </div>
