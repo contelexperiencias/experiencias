@@ -176,11 +176,11 @@
                             </div>
                             <div class="facet-body collapse " id="facetCheckboxes" style="">
                               <ul class="facet-group">
-                                <li class="facet-group-item" style="display: block;">
+                                <!-- <li class="facet-group-item" style="display: block;">
                                   <label class="form-check-label">
                                   <input class=" category_item form-check-input" type="checkbox" value="" category="all"><a>Todo</a>
                                   </label>
-                                </li>
+                                </li> -->
                                       @forelse ($destinos as $item)
                                 <li class="facet-group-item" style="display: block;">
                                       <label class="form-check-label">
