@@ -30,6 +30,7 @@
     <script src="/js/svg.js"></script> -->
     <!-- <script src="/js/jquery.maphighlight.min.js"></script> -->
     <style>
+  
         ::placeholder { color: white;  }
         .navbar-light .navbar-nav .nav-link {color:black !important}
         .bg-danger{ background:white !important}
@@ -57,11 +58,7 @@
         ul li:hover {
             border-bottom: 4px solid #E8C300;
         }
-        .width-75 {
-            width: 85px!important;
-            height: 75px!important;
-
-        }
+     
         .estilo-x {
 font-size: calc(0.5em + 0.5vw);
 
@@ -113,6 +110,7 @@ margin: 0.5em;}
     color:white;
     text-decoration:none;
     }
+   
     </style>
 </head>
 <body class="bg-danger">
