@@ -244,15 +244,19 @@
 
         @empty
         @endforelse  
+        {!! Form::open(['route'=>['carrusel.store'],'method'=>'POST','files'=>true]) !!}
                         <div class="text-center form-inline" style="justify-content: center;">  
                               <div class="form-group  ">
                                 <label for="staticEmail2" class="sr-only">Email</label>
                                 <input type="text" class="form-control-plaintext" id="staticEmail2" placeholder="email">
                               </div>
                               <div class="form-group ">
-                                <button style=" border-radius: 1.25rem; background:white; color:black" type="submit" class="btn btn-primary mb-2">suscribete</button>
+                              {!! Form::submit('suscribete',['class'=>'btn btn-primary mb-2','style'=>'border-radius: 1.25rem; background:white; color:black']) !!}
+                                <!-- <button style=" border-radius: 1.25rem; background:white; color:black" type="submit" class="btn btn-primary mb-2">suscribete</button> -->
                               </div>
                         </div>
+                      
+            {!! Form::close() !!}
                 </div>
               </div>
         </div>
