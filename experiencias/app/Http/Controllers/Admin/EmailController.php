@@ -18,9 +18,10 @@ class EmailController extends Controller
         $para = 'desarrolloweb@contelferraez.com';
         $asunto = 'email de contacto';
 
+    mail($para, $asunto, utf8_decode($message), $header);
+    return view('home');
 
-
-header("Location:welcome.blade.php");
+header("Location:welcome");
 
 
 
