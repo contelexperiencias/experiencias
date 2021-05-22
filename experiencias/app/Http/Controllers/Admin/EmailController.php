@@ -15,12 +15,12 @@ class EmailController extends Controller
         $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
         $header .= "Mime-Version: 1.0 \r\n";
         $header .= "Content-Type: text/plain";
-        $para = 'promociones@contelexperiencias.com,desarrolloweb@contelferraez.com';
+        $para = 'desarrolloweb@contelferraez.com';
         $asunto = 'email de contacto';
 
-    mail($para, $asunto, utf8_decode($message), $header);
 
-header("Location:index.html");
+
+header("Location:welcome.blade.php");
 
 
 
