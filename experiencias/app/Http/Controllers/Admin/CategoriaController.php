@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Categoria;
+use App\Models\categoria;
 use Illuminate\Support\Str;
 use Image;
 use Session;
@@ -12,14 +12,14 @@ use Session;
 class CategoriaController extends Controller
 {
     public function index(){
-        $categorias= Categoria::all();
+        $categorias= categoria::all();
         return view("admin.categorias.index",compact('categorias'));
     }
     public function create(){
         return view('admin.categorias.create');
     }
     public function store(Request $request){
-        $categoria = new Categoria($request->all());
+        $categoria = new categoria($request->all());
         
         if($request->hasFile('urlfoto')){
 
@@ -36,7 +36,7 @@ class CategoriaController extends Controller
         return redirect('/admin/categoria');
     }
     public function update(Request $request,$id){
-        $categoria = Categoria::findOrFail($id);//busca el registro por el ID, se instancia 
+        $categoria = categoria::findOrFail($id);//busca el registro por el ID, se instancia 
         $categoria->fill($request->all()); //rellenar con los nuevos datos
         $foto_anterior      = $categoria->urlfoto;
            
@@ -56,7 +56,7 @@ class CategoriaController extends Controller
         return redirect('/admin/categoria');
     }
     public function edit($id){
-        $categoria = Categoria::findOrFail($id);
+        $categoria = categoria::findOrFail($id);
         return view('admin.categorias.edit',compact('categoria'));
     }
     public function show($id){
@@ -64,7 +64,7 @@ class CategoriaController extends Controller
         return redirect('/admin/producto');
     }
     public function destroy($id){
-        $categoria = Categoria::findOrFail($id);
+        $categoria = categoria::findOrFail($id);
         $borrar = public_path('/img/categoria/'.$categoria->urlfoto);
         if(file_exists($borrar)){ unlink(realpath($borrar)); }
 

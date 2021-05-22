@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Curiosidad;
-use App\Models\Categoria;
+use App\Models\categoria;
 use Illuminate\Support\Str;
 use Image;
 
@@ -16,7 +16,7 @@ class CuriosidadController extends Controller
         return view("admin.curiosidad.index",compact('curiosidades'));
     }
     public function create(){
-        $categorias=Categoria::orderBy('nombre','ASC')->pluck('nombre','id');
+        $categorias=categoria::orderBy('nombre','ASC')->pluck('nombre','id');
         return view('admin.curiosidad.create', compact('categorias'));
     }
     public function store(Request $request){
@@ -64,7 +64,7 @@ class CuriosidadController extends Controller
     }
     public function edit($id){
         $curiosidad = Curiosidad::findOrFail($id);
-        $categorias=Categoria::orderBy('nombre','ASC')->pluck('nombre','id');
+        $categorias=categoria::orderBy('nombre','ASC')->pluck('nombre','id');
         return view('admin.curiosidad.edit',compact('curiosidad','categorias'));
     }
 

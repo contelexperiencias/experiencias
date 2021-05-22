@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\Categoria;
+use App\Models\categoria;
 use Illuminate\Support\Str;
 use Image;
 
@@ -17,7 +17,7 @@ class PostController extends Controller
         return view("admin.post.index",compact('posts'));
     }
     public function create(){
-        $categorias=Categoria::orderBy('nombre','ASC')->pluck('nombre','id');
+        $categorias=categoria::orderBy('nombre','ASC')->pluck('nombre','id');
         return view('admin.post.create', compact('categorias'));
     }
     public function store(Request $request){
@@ -65,7 +65,7 @@ class PostController extends Controller
     }
     public function edit($id){
         $post = Post::findOrFail($id);
-        $categorias=Categoria::orderBy('nombre','ASC')->pluck('nombre','id');
+        $categorias=categoria::orderBy('nombre','ASC')->pluck('nombre','id');
         return view('admin.post.edit',compact('post','categorias'));
     }
 

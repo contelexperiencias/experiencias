@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin','middleware' => 'auth'], function(){
     Route::resource('/empresa', App\Http\Controllers\Admin\EmpresaController::class);    
     Route::resource('/destino', App\Http\Controllers\Admin\DestinoController::class); 
     Route::resource('/curiosidad', App\Http\Controllers\Admin\CuriosidadController::class);  
+    Route::resource('/Email', App\Http\Controllers\Admin\EmailController::class);  
 
 });
 // rutas publicas

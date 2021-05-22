@@ -19,7 +19,7 @@ class CarruselController extends Controller
     }
     public function store(Request $request){
 
-        $carrusel = new carrusel($request->all());
+        $carrusel = new Carrusel($request->all());
         
         if($request->hasFile('urlfoto')){
 
@@ -68,7 +68,7 @@ class CarruselController extends Controller
     }
     public function update(Request $request,$id){
 
-        $carrusel = carrusel::findOrFail($id);
+        $carrusel = Carrusel::findOrFail($id);
         $carrusel->fill($request->all());
         $foto_anterior     = $carrusel->urlfoto;
 
@@ -123,12 +123,12 @@ class CarruselController extends Controller
     }
 
     public function edit($id){
-        $carrusel = carrusel::findOrFail($id);
+        $carrusel = Carrusel::findOrFail($id);
         return view('admin.carrusel.edit',compact('carrusel'));
     }
 
     public function destroy($id){
-        $carrusel = carrusel::findOrFail($id);
+        $carrusel = Carrusel::findOrFail($id);
         $borrar = public_path('/img/carrusel/'.$carrusel->urlfoto);
         if(file_exists($borrar)){ unlink(realpath($borrar)); }
         $carrusel->delete();

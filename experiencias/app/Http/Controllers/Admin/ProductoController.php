@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Producto;
-use App\Models\Categoria;
+use App\Models\producto;
+use App\Models\categoria;
 use App\Models\Destino;
 use App\Models\RelacionProductoDestino;
 use Illuminate\Support\Str;
@@ -16,8 +16,8 @@ class ProductoController extends Controller
      public function index(){
         if(!empty(Session::get('categoria_id'))){
             $destinos= Destino::get();
-            $categorias= Categoria::whereid(Session::get('categoria_id'))->get();
-            $productos = Producto::whereCategoria_id(Session::get('categoria_id'))->get();
+            $categorias= categoria::whereid(Session::get('categoria_id'))->get();
+            $productos = producto::whereCategoria_id(Session::get('categoria_id'))->get();
            
             return view("admin.producto.index",compact('productos','categorias'));
         }
@@ -25,13 +25,13 @@ class ProductoController extends Controller
     public function create(){
         $destinos= Destino::all();
         $categoria_id = Session::get('categoria_id');
-        $categorias= Categoria::whereid(Session::get('categoria_id'))->get();
+        $categorias= categoria::whereid(Session::get('categoria_id'))->get();
         return view("admin.producto.create",compact('categoria_id','categorias','destinos'));
        
     }
     public function store(Request $request){
         $destinos= Destino::get();
-        $producto = new Producto($request->all());   
+        $producto = new producto($request->all());   
      
         if($request->hasFile('urlfoto')){
             $imagen = $request->file('urlfoto');
@@ -55,7 +55,7 @@ class ProductoController extends Controller
 
     public function createrelacion(Request $request){
         $destinos= Destino::get();
-        $id = Producto::all()->last();
+        $id = producto::all()->last();
        
         echo $id->id;
        echo  $request->nombre;
@@ -79,7 +79,7 @@ class ProductoController extends Controller
     }
     public function update(Request $request,$id){
         $destinos= Destino::get();
-        $producto = Producto::findOrFail($id);        
+        $producto = producto::findOrFail($id);        
         $producto->fill($request->all());
         $foto_anterior     = $producto->urlfoto;
         $producto->familia = $request->input('Familia') ==null ? 0 : 1;
@@ -119,9 +119,9 @@ class ProductoController extends Controller
     }
     public function edit($id){
         $destinos= Destino::all();
-        $producto = Producto::findOrFail($id);
+        $producto = producto::findOrFail($id);
         $categoria_id = Session::get('categoria_id');
-        $categorias= Categoria::whereid(Session::get('categoria_id'))->get();
+        $categorias= categoria::whereid(Session::get('categoria_id'))->get();
         $relProductoDestino = RelacionProductoDestino :: whereproducto_id($producto->id)->get();
         $activochk = 'checked';
         return view('admin.producto.edit',compact('producto','categoria_id','categorias','destinos','relProductoDestino','activochk'));
@@ -134,7 +134,7 @@ class ProductoController extends Controller
 
     }
     public function destroy($id){
-        $producto = Producto::findOrFail($id);
+        $producto = producto::findOrFail($id);
         $borrar = public_path('/img/producto/'.$producto->urlfoto);
         if(file_exists($borrar)){ unlink(realpath($borrar)); }
         $producto->delete();
