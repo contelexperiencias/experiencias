@@ -111,7 +111,8 @@
 		
 			<section class="products-list col-sm-8">
       @forelse ($producto as $item)
-      <div id="{{$item->id}}" class="thumbnail  product-item" category="{{$item->categoria_id}}" familia="{{$item->familia}}" grupo="{{$item->grupo}}" pareja="{{$item->pareja}}" solo="{{$item->solo}}" >
+      <div id="{{$item->id}}" class="thumbnail  product-item" category="{{$item->categoria_id}}" familia="{{$item->familia}}" grupo="{{$item->grupo}}" pareja="{{$item->pareja}}" solo="{{$item->solo}}">
+      <a href="/experiencias/{{$item->categoria->slug}}/{{$item->slug}}">
 					<img class="thumbnail w-100" src="/img/producto/{{$item->urlfoto}}" alt="" >
           
 					<a href="#"><strong>{{$item->title}}</strong></a>
@@ -127,6 +128,7 @@
           @empty
         @endforelse
         </p>
+        </a>
 				</div>
 
       @empty
@@ -271,7 +273,7 @@
                                   <h3 class="text-center">{{$r->nombre}}</h3>
                                   <p>{{$r->description}}</p>
                                   <!-- <span class="small">{{$r->created_at->diffForHumans()}}</span> -->
-                                  <p href="/blog/{{$r->slug}}" class="btn btn-success btn-sm btn-xs btn-radius ">Leer</p>
+                                  <a href="/blog/{{$r->slug}}" class="btn btn-success btn-sm btn-xs btn-radius ">Leer</a>
                       </div>
                   </div>
                   @empty              

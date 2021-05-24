@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/buttons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <!-- <link rel="stylesheet" href="/css/custom.scss.css">
+    <link rel="stylesheet" href="/css/theme.scss.css"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-3.2.1.js"></script>
@@ -44,6 +46,94 @@
             font-size:18px;
             background-color:#CCC;
         }
+        .w {
+  width:50vmin;
+  height:80vmin;
+}
+
+.ts {
+  width:100%; height:100%;
+  position:relative;
+  --barH:20%;/*active zone height = 100% - barH*/
+}
+
+.t {
+  --w:20%;
+  display:block; width:var(--w); height:var(--barH);
+  position:absolute; bottom:0; left:var(--l);
+  transform-origin:top left;
+}
+
+.t img {
+  dislay:block; width:100%; height:100%;
+  object-fit:cover;
+  transform:scale(0.8);
+}
+
+[type="radio"] { 
+  display:none; 
+}
+
+:checked + label.t {
+  left:0; bottom:var(--barH);
+  height:calc(100% - var(--barH));
+}
+
+:checked + label.t img {
+  object-fit:contain;
+}
+
+/* 
+optional
+*/
+
+.ts {/*thumbnails bar*/
+  perspective:100px;
+  perspective-origin:center center;
+  transform-style:preserve-3d;
+  pointer-events:none;
+}
+
+.ts:after {/*the plate*/
+  content:"";
+  display:block; width:100%; height:15px;
+  position:absolute; bottom:0;
+  background:linear-gradient(transparent 20%, rgba(0,0,0,0.1));
+  transform:rotateX(90deg)scaleX(1.2);
+  transform-origin:bottom center;
+}
+
+:not(:checked) + .t {/*inactive labels*/
+  transform:translate3d(0, 0, -5px);
+  pointer-events:auto;
+}
+
+:not(:checked) + .t:hover {
+  transform:translate3d(0, -7px, -5px);
+  box-shadow:0 30px 30px -25px rgba(0,0,0,0.3);
+  cursor:pointer;
+}
+
+:not(:checked) + .t img {
+  transform:scale(0.9);/*create gaps*/
+}
+
+:checked + .t {/*active label*/
+  /* box-shadow:0 0 0 transparent;
+  animation:anim 2s 1; */
+} @keyframes anim {
+  from { transform:rotateY(6deg)rotateX(3deg) }
+}
+
+/* 
+transitions
+*/
+.t {/*active->inactive & hover->rest*/
+  /* transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 1s; */
+}
+.t:hover, :checked + .t {
+  /* transition:transform 0.5s, bottom 0.6s, left 0.6s, width 0.3s, box-shadow 0s; */
+}
         ul {
             
         }
@@ -189,3 +279,27 @@ margin: 0.5em;}
             </footer>
 </body>
 </html>
+<script>
+const els = document.querySelectorAll("[type='radio']");
+for (const el of els)
+  el.addEventListener("input", e => reorder(e.target, els));
+reorder(els[0], els);
+
+function reorder(targetEl, els) {
+  const nItems = els.length;
+  let processedUncheck = 0;
+  for (const el of els) {
+    const containerEl = el.nextElementSibling;
+    if (el === targetEl) {//checked radio
+      containerEl.style.setProperty("--w", "100%");
+      containerEl.style.setProperty("--l", "0");
+    }
+    else {//unchecked radios
+      containerEl.style.setProperty("--w", `${100/(nItems-1)}%`);
+      containerEl.style.setProperty("--l", `${processedUncheck * 100/(nItems-1)}%`);
+      processedUncheck += 1;
+    }
+  }
+}
+
+</script>

@@ -23,22 +23,46 @@ class FrontController extends Controller
         return view('welcome',compact('carrusel','producto','categorias','destinos','relacionProductoDestino','posts','curiosidad'));
        
     }
-    public function store(Request $request){
-        $emails=$request->all();
-        $mail = $_POST['email'];
-        $message = "Hola deseo me hagan llegar sus promociones";
-        $header = 'From: ' . $mail . " \r\n";
-        $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-        $header .= "Mime-Version: 1.0 \r\n";
-        $header .= "Content-Type: text/plain";
-        $para = 'promociones@contelexperiencias.com,desarrolloweb@contelferraez.com';
-        $asunto = 'email de contacto';
+    public function experiencias(){
+        $categorias = categoria::all();
+        return view('front.categorias',compact('categorias'));
+    }
+    public function categoria($categoria){
+        $categoria = categoria::whereSlug($categoria)->first();
+        return view('front.categoria',compact('categoria'));
+    }
+    public function producto($categoria,$producto){
+        $producto = producto::whereSlug($producto)->first();
+        return view('front.producto',compact('producto'));
+    }
+    public function blog(){
+        $posts = Post::all();
+        return view('front.posts',compact('posts'));
+    }
 
-    mail($para, $asunto, utf8_decode($message), $header);
+    public function post($post){
+        $post = Post::whereSlug($post)->first();
+        $post->increment('visitas');
+        return view('front.post',compact('post'));
+    }
+    public function contacto(){
+     
+        return view('front.contacto');
+    }
 
-    return view('welcome');
-
-
-
+    public function contactoenvio(Request $r){
+     if(!empty($r)){
+         $nombre    = $_POST['nombre'];
+         $email     = $_POST['email'];
+         $mensaje   = $_POST['mensaje'];
+         if(mail($email,"ASUNTO CONTACTO ",$mensaje)){
+            $resultado = "Gracias!!!. se envió tu mensaje";
+         }else{
+            $resultado = "No se pudo enviar tu mensaje";
+         }
+        return redirect()->back()->with('success',$resultado);
+     }else{
+         return redirect()->back()->with('success',"NO SE PUDO ENVIA EL MENSAJE");
+     }
     }
 }

@@ -25,7 +25,7 @@ class producto extends Model
         'grupo',
         'solo'
     ];
-    public function Categoria(){
-        return $this->belongsTo("App\Categoria");
+    public function categoria(){
+        return $this->belongsTo("App\Models\categoria");
     }
 }
