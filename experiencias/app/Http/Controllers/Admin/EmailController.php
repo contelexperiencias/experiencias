@@ -17,11 +17,10 @@ class EmailController extends Controller
         $header .= "Content-Type: text/plain";
         $para = 'desarrolloweb@contelferraez.com';
         $asunto = 'email de contacto';
+        mail($para, $asunto, utf8_decode($message), $header);
+   
 
-    mail($para, $asunto, utf8_decode($message), $header);
-    return view('home');
-
-header("Location:welcome");
+        echo "<script> window.location='https://experiencias.contelferraez.com'; </script>";
 
 
 
