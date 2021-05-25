@@ -10,6 +10,7 @@ use App\Models\Destino;
 use App\Models\RelacionProductoDestino;
 use App\Models\Post;
 use App\Models\Curiosidad;
+use App\Models\Empresa;
 class FrontController extends Controller
 {
     public function index(){
@@ -55,14 +56,16 @@ class FrontController extends Controller
          $nombre    = $_POST['nombre'];
          $email     = $_POST['email'];
          $mensaje   = $_POST['mensaje'];
-         if(mail($email,"ASUNTO CONTACTO ",$mensaje)){
+         $para = 'desarrolloweb@contelferraez.com';
+         
+         if(mail($para,"ASUNTO CONTACTO ",utf8_decode($mensaje))){
             $resultado = "Gracias!!!. se envió tu mensaje";
          }else{
             $resultado = "No se pudo enviar tu mensaje";
          }
         return redirect()->back()->with('success',$resultado);
      }else{
-         return redirect()->back()->with('success',"NO SE PUDO ENVIA EL MENSAJE");
+         return redirect()->back()->with('success',"NO SE PUDO ENVIAR EL MENSAJE");
      }
     }
 }

@@ -232,7 +232,14 @@
 		</div>
 	</div>
 <!--FIN area de PRODUCTOS/FILTROS -->
- 
+<h2 class="mt-5">FORMULARIO</h2>
+            @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <ul>
+                    <li>{{\Session::get('success')}}</li>
+                </ul>
+            </div>
+            @endif
 
         <!--INICIO SUSCRIPCIONES -->
         <div class=" carousel-inner ">

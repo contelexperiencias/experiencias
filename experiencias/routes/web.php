@@ -42,4 +42,5 @@ Route::get('/experiencias/{categoria}/{producto}', [App\Http\Controllers\FrontCo
 Route::get('/blog', [App\Http\Controllers\FrontController::class, 'blog']);
 Route::get('/blog/{post}', [App\Http\Controllers\FrontController::class, 'post']);
 Route::get('/contacto', [App\Http\Controllers\FrontController::class, 'contacto']);
+Route::post('/contacto', [App\Http\Controllers\FrontController::class, 'contactoenvio']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

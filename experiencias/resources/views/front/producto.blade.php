@@ -22,7 +22,7 @@
     <h1 class="p-3 text-Black mt-5">{{$producto->nombre}}</h1>
     {!!$producto->descripcion!!}
             <a href="mailto:{{$config->email}}" style="display: inline; font-size: 8px;" class="btn btn-info btn-xs btn-radius" role="button">EMAIL</a>
-            <a href="https://api.whatsapp.com/send?phone={{$config->celular}}" style="display: inline; font-size: 8px;" class="btn btn-success btn-xs btn-radius" role="button">WHATSAPP</a>
+            <a href="https://api.whatsapp.com/send?phone=52{{$config->celular}}" style="display: inline; font-size: 8px;" class="btn btn-success btn-xs btn-radius" role="button">WHATSAPP</a>
             <a href="#" style="display: inline; font-size: 8px;" class="btn btn-warning btn-ms btn-radius" role="button">RESERVA</a>
 
 

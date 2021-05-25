@@ -17,10 +17,15 @@ class EmailController extends Controller
         $header .= "Content-Type: text/plain";
         $para = 'desarrolloweb@contelferraez.com';
         $asunto = 'email de contacto';
-        mail($para, $asunto, utf8_decode($message), $header);
+        if(mail($para, $asunto, utf8_decode($message), $header)){
+            $resultado = "Gracias!!!. se envió tu mensaje";
+        }else{
+            $resultado = "No se pudo enviar tu mensaje";
+        }
+        return redirect()->back()->with('success',$resultado);
    
 
-        echo "<script> window.location='https://experiencias.contelferraez.com'; </script>";
+        // echo "<script> window.location='https://experiencias.contelferraez.com'; </script>";
 
 
 
