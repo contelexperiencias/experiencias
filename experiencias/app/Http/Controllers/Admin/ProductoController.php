@@ -41,6 +41,38 @@ class ProductoController extends Controller
             ->save( public_path('/img/producto/'.$nuevonombre));
             $producto->urlfoto = $nuevonombre;
         }
+        if($request->hasFile('urlfoto2')){
+            $imagen = $request->file('urlfoto2');
+            $nuevonombre = Str::slug($request->nombre).'.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto2 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto3')){
+            $imagen = $request->file('urlfoto3');
+            $nuevonombre = Str::slug($request->nombre).'.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto3 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto4')){
+            $imagen = $request->file('urlfoto4');
+            $nuevonombre = Str::slug($request->nombre).'.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto4 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto5')){
+            $imagen = $request->file('urlfoto5');
+            $nuevonombre = Str::slug($request->nombre).'.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto5 = $nuevonombre;
+        }
         $producto->categoria_id     =   Session::get('categoria_id');
         $producto->slug    =   Str::slug($request->nombre);     
         $producto->familia = $request->input('Familia') ==null ? 0 : 1;
@@ -112,6 +144,51 @@ class ProductoController extends Controller
             ->save( public_path('/img/producto/'.$nuevonombre));
             $producto->urlfoto = $nuevonombre;
         }
+        if($request->hasFile('urlfoto2'))
+        {
+            $rutaAnterior = public_path('/img/producto/'.$foto_anterior);
+            if(file_exists($rutaAnterior)){ unlink(realpath($rutaAnterior)); }
+            $imagen = $request->file('urlfoto2');            
+            $nuevonombre = 'producto_'.$request->nombre.'2.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto2 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto3'))
+        {
+            $rutaAnterior = public_path('/img/producto/'.$foto_anterior);
+            if(file_exists($rutaAnterior)){ unlink(realpath($rutaAnterior)); }
+            $imagen = $request->file('urlfoto3');            
+            $nuevonombre = 'producto_'.$request->nombre.'3.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto3 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto4'))
+        {
+            $rutaAnterior = public_path('/img/producto/'.$foto_anterior);
+            if(file_exists($rutaAnterior)){ unlink(realpath($rutaAnterior)); }
+            $imagen = $request->file('urlfoto4');            
+            $nuevonombre = 'producto_'.$request->nombre.'4.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto4 = $nuevonombre;
+        }
+        if($request->hasFile('urlfoto5'))
+        {
+            $rutaAnterior = public_path('/img/producto/'.$foto_anterior);
+            if(file_exists($rutaAnterior)){ unlink(realpath($rutaAnterior)); }
+            $imagen = $request->file('urlfoto5');            
+            $nuevonombre = 'producto_'.$request->nombre.'5.'.$imagen->guessExtension();
+            Image::make($imagen->getRealPath())
+            ->fit(1200,800,function($constraint){ $constraint->upsize();  })
+            ->save( public_path('/img/producto/'.$nuevonombre));
+            $producto->urlfoto5 = $nuevonombre;
+        }
+        
         $producto->slug    =   Str::slug($request->nombre);
         $producto->save();       
         // echo('{{$request}}');

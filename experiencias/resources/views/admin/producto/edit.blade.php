@@ -106,7 +106,30 @@
                     <img src="/img/producto/{{$producto->urlfoto}}?{{rand(22,99999) }}">
                     {!! Form::file('urlfoto') !!}
                 </div>
+               <div class="row">
                
+               <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/{{$producto->urlfoto2}}?{{rand(22,99999) }}">
+                    {!! Form::file('urlfoto2') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/{{$producto->urlfoto3}}?{{rand(22,99999) }}">
+                    {!! Form::file('urlfoto3') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/{{$producto->urlfoto4}}?{{rand(22,99999) }}">
+                    {!! Form::file('urlfoto4') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/{{$producto->urlfoto5}}?{{rand(22,99999) }}">
+                    {!! Form::file('urlfoto5') !!}
+                </div>
+               
+               </div>
             </div>
             
             {!! Form::submit('GUARDAR',['class'=>'btn btn-success']) !!}

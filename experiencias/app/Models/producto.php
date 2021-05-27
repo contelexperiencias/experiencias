@@ -23,7 +23,11 @@ class producto extends Model
         'familia',
         'pareja',
         'grupo',
-        'solo'
+        'solo',
+        'urlfoto2',
+        'urlfoto3',
+        'urlfoto4',
+        'urlfoto5'
     ];
     public function categoria(){
         return $this->belongsTo("App\Models\categoria");
