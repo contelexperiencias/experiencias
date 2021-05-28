@@ -328,6 +328,90 @@ margin: 0.5em;}
     
     z-index:1032;
 }
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee
+}
+
+.card {
+    border: none;
+    padding: 10px;
+    width: 350px;
+    position: relative
+}
+
+.off {
+    position: absolute;
+    left: 76%;
+    top: 3%;
+    width: 72px;
+    text-align: center;
+    height: 25px;
+    line-height: 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff
+}
+
+.thumbnail {
+    margin-top: 20px
+}
+
+.thumbnail img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #eee;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px
+}
+
+.thumbnail img:hover {
+    border: 1px solid #00000059
+}
+
+.about {
+    margin-top: 20px
+}
+
+.product_fav i {
+    line-height: 40px;
+    color: #343a40;
+    font-size: 15px
+}
+
+.product_fav {
+    display: inline-block;
+    width: 36px;
+    height: 39px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 11%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 3px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease
+}
+
+.product_fav:hover {
+    background: #343a40
+}
+
+.product_fav:hover i {
+    color: #fff
+}
     </style>
 </head>
 <body class="bg-danger">
@@ -407,6 +491,13 @@ margin: 0.5em;}
 </body>
 </html>
 <script>
+function change_image(image){
+var image_container = document.getElementById("main-image");
+
+
+image_container.src = image.src;
+
+}
 const els = document.querySelectorAll("[type='radio']");
 for (const el of els)
   el.addEventListener("input", e => reorder(e.target, els));
