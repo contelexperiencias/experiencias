@@ -20,8 +20,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/buttons.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/galeria.css">
-    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dist/ekko-lightbox.css">
+    
+    <!-- <link rel="stylesheet" href="/css/galeria.css">
+    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet"> -->
 
     <!-- <link rel="stylesheet" href="/css/custom.scss.css">
     <link rel="stylesheet" href="/css/theme.scss.css"> -->
@@ -31,6 +33,8 @@
 	<script src="/js/script.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
+    <script src="/css/dist/ekko-lightbox.min.js"></script>
+    <script src="/css/dist/ekko-lightbox.js"></script>
     <!-- <script src="/js/map_charts1.js"></script>
     <script src="/js/svg.js"></script> -->
     <!-- <script src="/js/jquery.maphighlight.min.js"></script> -->
@@ -340,7 +344,7 @@ margin: 0.5em;}
 .card {
     border: none;
     padding: 10px;
-    width: 350px;
+    /* width: 519px; */
     position: relative
 }
 
@@ -366,8 +370,8 @@ margin: 0.5em;}
 
 .thumbnail img {
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+  
     border: 1px solid #eee;
     padding: 5px;
     cursor: pointer;
