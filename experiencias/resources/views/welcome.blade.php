@@ -18,28 +18,28 @@
             <img src="/img/carrusel/{{$item->urlfoto}}" class="d-block w-100 img-fluid" alt="{{$item->frase}}" style="image-rendering: pixelated;"> 
             <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 carousel-caption  carousel-caption-slider pb-5" style="left: 0%!important; top: 5%!important; height: 15%;">
-            <h1>{{$item->encabezado}}</h1>
-            <h2>{{$item->subencabezado}}</h2>
+            <h2 style="font-family: 'Muli', sans-serif; font-weight:bold;">{{$item->encabezado}}</h2>
+            <h4>{{$item->subencabezado}}</h4>
             </div>
             </div>
-            <div class="carousel-caption carousel-caption-slider ml-auto mr-auto mx-auto">  
+            <div class="carousel-caption carousel-caption-slider ml-auto mr-auto mx-auto" style="left:24%">  
             <div class="row" style="flex-wrap: nowrap;">  
-            <div class="col-sm-4 col-xs-4 col-md-4">      
+            <div class="col-sm-4 col-xs-4 col-md-4" style="max-width: 23.333333%">      
                 <img src="/img/carrusel/{{$item->urlfoto1}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                 <h4 class=""><a><strong>{{$item->title}}</strong></a></h4>
-                 <h4 class=""><a>{{$item->descripcion}}</a></h4>
+                 <h5 class="" style="font-family: 'Muli', sans-serif; margin-top: 19px;"><a>{{$item->title}}</a></h5>
+                 <h6 class=""><a>{{$item->descripcion}}</a></h6>
                  <p><a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius ">VER MÁS</a></p>
             </div>  
-            <div class="col-sm-4 col-xs-4 col-md-4">      
+            <div class="col-sm-4 col-xs-4 col-md-4"  style="max-width: 23.333333%">      
                 <img src="/img/carrusel/{{$item->urlfoto2}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                 <h4 class=""><a><strong>{{$item->title2}}</strong></a></h4>
-                 <h4 class=""><a>{{$item->descripcion2}}</a></h4>
+                 <h5 class="" style="font-family: 'Muli', sans-serif; margin-top: 19px;"><a>{{$item->title2}}</a></h5>
+                 <h6 class=""><a>{{$item->descripcion2}}</a></h6>
                  <p><a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a></p>
             </div> 
-            <div class="col-sm-4 col-xs-4 col-md-4">      
+            <div class="col-sm-4 col-xs-4 col-md-4"  style="max-width: 23.333333%">      
                 <img src="/img/carrusel/{{$item->urlfoto3}}" class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" alt="{{$item->frase}}" style="image-rendering: pixelated; border:white 3px solid;">           
-                 <h4 class=""><a><strong>{{$item->title3}}</strong></a></h4>
-                 <h4 class=""><a>{{$item->descripcion3}}</a></h4>
+                 <h5 class="" style="font-family: 'Muli', sans-serif; margin-top: 19px;"><a>{{$item->title3}}</a></h5>
+                 <h6 class=""><a>{{$item->descripcion3}}</a></h6>
                  <p><a href="{{$item->link}}" class="btn btn-light btn-sm btn-xs btn-radius">VER MÁS</a></p>
             </div> 
             </div>  
@@ -148,7 +148,7 @@
           <section class="facet">
                 <!-- <a class="collapse-controle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  App benifits tittle one goes here <span class="expand-icon-wrap"><i class="fa expand-icon"></i></span></a> -->
                   <div class="facet-header">
-                    <a type="button" class=" facet-toggle collapsed collapse-controle" data-toggle="collapse" href="#facetCheckboxes" aria-expanded="false" aria-controls="collapseExample"> <strong class="facet-title" style="color:black">Experiencia</strong> </a> 
+                    <a type="button" class=" facet-toggle collapsed collapse-controle" data-toggle="collapse" href="#facetCheckboxes" aria-expanded="true" aria-controls="collapseExample"> <strong class="facet-title" style="color:black">Experiencia</strong> </a> 
                   </div>
                   <div class="facet-body collapse" id="facetCheckboxes" style="">
                     <ul class="facet-group">
@@ -232,7 +232,7 @@
 		</div>
 	</div>
 <!--FIN area de PRODUCTOS/FILTROS -->
-<h2 class="mt-5">FORMULARIO</h2>
+
             @if (\Session::has('success'))
             <div class="alert alert-success">
                 <ul>

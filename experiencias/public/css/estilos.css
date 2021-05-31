@@ -130,15 +130,18 @@ h1 {
 	}
 	h2,
 	.h2 {
-	  font-size: calc(0.325rem + 0.9vw);
+		font-size:1.75vw
+	  /* font-size: calc(0.325rem + 0.9vw); */
 	}
 	h3,
 	.h3 {
-	  font-size: calc(1.3rem + 0.6vw);
+		font-size:1.55vw;
+	  /* font-size: calc(1rem + 0.4vw); */
 	}
 	h4,
 	.h4 {
-	  font-size: calc(0.5rem + 0.3vw);
+		font-size:1.45vw;
+	  /* font-size: calc(0.5rem + 0.3vw); */
 	}
 	.display-1 {
 	  font-size: calc(1.725rem + 5.7vw);
@@ -226,7 +229,7 @@ h1 {
 	.carousel-caption-slider{
 		position: absolute!important;
 		bottom: -15px!important;
-		left: 0%!important;
+		left: 5%!important;
 		z-index: 10!important;
 		padding-top: 0px!important;
 		padding-bottom: 0px!important;

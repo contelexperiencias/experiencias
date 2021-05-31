@@ -20,7 +20,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/buttons.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
-    <link rel="stylesheet" href="/css/dist/ekko-lightbox.css">
+ 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
     
     <!-- <link rel="stylesheet" href="/css/galeria.css">
@@ -34,8 +34,7 @@
 	<script src="/js/script.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
-    <script src="/css/dist/ekko-lightbox.min.js"></script>
-    <script src="/css/dist/ekko-lightbox.js"></script>
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <!-- <script src="/js/map_charts1.js"></script>
     <script src="/js/svg.js"></script> -->
@@ -52,7 +51,7 @@
 
         body{
             font-family: 'Muli', sans-serif;
-            font-size:18px;
+            font-size:16px;
             background-color:#CCC;
         }
         .w {
