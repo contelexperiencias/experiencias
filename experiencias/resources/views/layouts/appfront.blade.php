@@ -21,6 +21,7 @@
     <link href="/css/buttons.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/estilos.css">
     <link rel="stylesheet" href="/css/dist/ekko-lightbox.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
     
     <!-- <link rel="stylesheet" href="/css/galeria.css">
     <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet"> -->
@@ -35,6 +36,7 @@
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
     <script src="/css/dist/ekko-lightbox.min.js"></script>
     <script src="/css/dist/ekko-lightbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <!-- <script src="/js/map_charts1.js"></script>
     <script src="/js/svg.js"></script> -->
     <!-- <script src="/js/jquery.maphighlight.min.js"></script> -->

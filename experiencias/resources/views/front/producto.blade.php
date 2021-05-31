@@ -10,12 +10,12 @@
 <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6" >
 <div class="card"> 
          <!-- <span class="off bg-dark">-10%</span> -->
-        <div class="text-center p-4"><a data-toggle="lightbox"  href="/img/producto/{{$producto->urlfoto}}"> <img id="main-image"  src="/img/producto/{{$producto->urlfoto}}" width=100% /></a> </div>
+        <div class="text-center p-4"><a data-fancybox="gallery1" class="fancybox"  href="/img/producto/{{$producto->urlfoto}}"> <img id="main-image"  src="/img/producto/{{$producto->urlfoto}}" width=100% /></a> </div>
         <div class="thumbnail text-center">
-        <img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto}}" width="80"> 
-        <img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto2}}" width="80"> 
-        <img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto3}}" width="80">
-        <img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto4}}" width="80"> 
+        <a data-fancybox="gallery1" class="fancybox"  href="/img/producto/{{$producto->urlfoto}}"> <img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto}}" width="80"></a> 
+        <a data-fancybox="gallery1" class="fancybox"  href="/img/producto/{{$producto->urlfoto2}}"><img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto2}}" width="80"></a> 
+        <a data-fancybox="gallery1" class="fancybox"  href="/img/producto/{{$producto->urlfoto3}}"><img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto3}}" width="80"></a>
+        <a data-fancybox="gallery1" class="fancybox"  href="/img/producto/{{$producto->urlfoto4}}"><img onclick="change_image(this)" src="/img/producto/{{$producto->urlfoto4}}" width="80"></a> 
         </div>
         <!-- <div class="about text-center">
             <h6>Crysta Stylish Sunglasses 2.0</h6> <span>$9.99</span>
