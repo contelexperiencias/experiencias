@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var value = $(this).val().toLowerCase();
 		var a,txtValue;
 		for (i = 0; i < $('.product-item').length; i++) {
-			a = $('.product-item')[i].getElementsByTagName("a")[0];
+			a = $('.product-item')[i].getElementsByTagName("p")[0];
 			txtValue = a.textContent || a.innerText;
 			if (txtValue.toLowerCase().indexOf(value) > -1) {
 				$('.product-item')[i].style.display = "";

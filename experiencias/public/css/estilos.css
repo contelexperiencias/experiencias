@@ -73,7 +73,7 @@ body{
 	width: 30%;
 	margin-left: 3%;
 	margin-bottom: 25px;
-	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22);
+	/* box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.22); */
 
 	display: flex;
 	flex-direction: column;
@@ -90,7 +90,7 @@ body{
 .products-list .product-item a{
 	display: block;
 	width: 100%;
-	padding: 8px 0;
+	padding: 3px;
 	/* background: #2D3E50; */
 
 	color:black;
@@ -196,7 +196,7 @@ h1 {
 		flex-direction: column;
 	}
 	.category_list .category_item{
-		width: 100%;
+		/* width: 100%; */
 		margin-bottom: 10px;
 	}
 }
@@ -222,6 +222,12 @@ h1 {
 		width: 100%;
 		margin-left: 0px;
 	}
+	.h6, h6 {
+		font-size: 1.6vw;
+	}
+	.h5, h5 {
+		font-size: 1.8vw;
+	}
 	.btn-xs{
 	font-size: 10px;
     padding: 1px 5px;
@@ -229,16 +235,21 @@ h1 {
 	.carousel-caption-slider{
 		position: absolute!important;
 		bottom: -15px!important;
-		left: 5%!important;
+		left: 21%!important;
 		z-index: 10!important;
 		padding-top: 0px!important;
 		padding-bottom: 0px!important;
 		color: #fff!important;
 		text-align: center!important;
 	}
+	.category_list .category_item{
+		align-self: flex-start;
+		width: 5%;
+		font-size: 14px;
+	}
 	.width-75{
-		width: 45px!important;
-		height: 35px!important;
+		width: 35px!important;
+		height: 25px!important;
 	}
 	.form-inline{
 		flex-flow: row;
