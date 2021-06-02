@@ -373,7 +373,7 @@ margin: 0.5em;}
     display: inline-block;
     width: 100px;
   
-    border: 1px solid #eee;
+    border: 0px solid #eee;
     padding: 5px;
     cursor: pointer;
     border-radius: 4px

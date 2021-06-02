@@ -202,6 +202,60 @@ h1 {
 }
 
 @media screen and (max-width: 600px){
+	.h6, h6 {
+		font-size: 1.6vw;
+	}
+	.h5, h5 {
+		font-size: 1.8vw;
+	}
+	.h3, h3 {
+		font-size: calc(1rem + 0.4vw);
+	}
+	.h2, h2 {
+		font-size: calc(0.325rem + 0.9vw);
+	}
+	.h4, h4 {
+	font-size: calc(0.299rem + 0.5vw);
+	}
+	.form-inline {
+	flex-flow: nowrap;
+	}
+	.suscripcion {
+		font-size: 0.5rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		border-radius: 2px;
+		line-height: 0.3;
+		padding: 10px 10px;
+		text-shadow: 1px 1px 1px rgb(0 0 0 / 14%);
+		text-transform: uppercase;
+		box-shadow: 0 4px 9px 0 rgb(0 0 0 / 20%);
+	}
+
+	.carousel-caption-slider{
+		position: absolute!important;
+		bottom: -15px!important;
+		left: 21%!important;
+		z-index: 10!important;
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+		color: #fff!important;
+		text-align: center!important;
+	}
+	.width-75{
+		width: 35px!important;
+		height: 25px!important;
+	}
+	.btn-xs{
+		font-size: 4px;
+		padding: 2px 5px;
+	
+	}
+	.category_list .category_item{
+		align-self: flex-start;
+		width: 5%;
+		font-size: 14px;
+	}
 
 	.products-list .product-item{
 		width: 47.5%;
@@ -218,6 +272,31 @@ h1 {
 }
 
 @media screen and (max-width: 380px){
+	.suscripcion {
+		font-size: 0.5rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		border-radius: 2px;
+		line-height: 0.3;
+		padding: 10px 10px;
+		text-shadow: 1px 1px 1px rgb(0 0 0 / 14%);
+		text-transform: uppercase;
+		box-shadow: 0 4px 9px 0 rgb(0 0 0 / 20%);
+	}
+	.form-control-plaintext{
+		display: block;
+		width: 100%;
+		padding: 0.1rem 0.475rem;
+		margin-bottom: 0;
+		font-size: 0.8rem;
+		line-height: 0.5;
+		color: #212529;
+		background-color: rgb(255 255 255 / 24%);
+		border: solid rgb(255 254 254 / 0%);
+		border-width: 1px 0;
+		border-radius: 1.25rem;
+	}
+
 	.products-list .product_item{
 		width: 100%;
 		margin-left: 0px;
@@ -228,9 +307,19 @@ h1 {
 	.h5, h5 {
 		font-size: 1.8vw;
 	}
+	.h3, h3 {
+		font-size: calc(1rem + 0.4vw);
+	}
+	.h2, h2 {
+		font-size: calc(0.385rem + 0.9vw);
+	}
+	.h4, h4 {
+	font-size: calc(0.299rem + 0.5vw);
+	}
 	.btn-xs{
-	font-size: 10px;
-    padding: 1px 5px;
+		font-size: 4px;
+		padding: 2px 5px;
+	
 	}
 	.carousel-caption-slider{
 		position: absolute!important;
@@ -254,4 +343,31 @@ h1 {
 	.form-inline{
 		flex-flow: row;
 	}
+}
+
+@media screen and (max-width: 280px){
+	.width-75 {
+		width: 35px!important;
+		height: 25px!important;
+	}
+	.col-sm-4with  {
+		max-width: 33.333333%!important;
+	}
+	
+	.carousel-caption-slider {
+		position: absolute!important;
+		bottom: -15px!important;
+		left: 0%!important;
+		z-index: 10!important;
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+		color: #fff!important;
+		text-align: center!important;
+	}
+	.withmin{
+		width: 154%!important;
+	}
+
+
+
 }
