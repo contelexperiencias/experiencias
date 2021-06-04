@@ -11,9 +11,19 @@ use App\Models\RelacionProductoDestino;
 use App\Models\Post;
 use App\Models\Curiosidad;
 use App\Models\Empresa;
+use SEO;
+use JsonLd;
+use OpenGraph;
 class FrontController extends Controller
 {
     public function index(){
+        SEO::setTitle('Contel experiencias');
+        SEO::setDescription('Nuestro sitio para la aventura');
+        SEO::opengraph()->setUrl('https://experiencias.contelferraez.com/');
+        SEO::setCanonical('https://experiencias.contelferraez.com/');
+        SEO::opengraph()->addProperty('type', 'articles');
+        SEO::twitter()->setSite('@experiencias');
+        OpenGraph::addImage("https://experiencias.contelferraez.com/img/configuracion/contel-experiencias.jpg");
         $carrusel = Carrusel::orderBy('orden','asc')->get();
         $producto = producto::orderBy('orden','asc')->get();
         $categorias = categoria::orderBy('orden','asc')->take(7)->get(); 
@@ -35,6 +45,14 @@ class FrontController extends Controller
     }
     public function producto($categoria,$producto){
         $producto = producto::whereSlug($producto)->first();
+        SEO::setTitle($producto->title);
+        JsonLd::addImage("https://experiencias.contelferraez.com/img/producto/{$producto->urlfoto}");       
+        SEO::setDescription( $producto->description);
+        SEO::opengraph()->setUrl("https://experiencias.contelferraez.com/experiencias/{$categoria}/{$producto->slug}");
+        SEO::setCanonical("https://experiencias.contelferraez.com/experiencias/{$categoria}/{$producto->slug}");
+        SEO::opengraph()->addProperty('type', 'articles');
+        SEO::twitter()->setSite('@contelexperiencias');
+        OpenGraph::addImage("https://experiencias.contelferraez.com/img/producto/{$producto->urlfoto}");
         return view('front.producto',compact('producto'));
     }
     public function blog(){
@@ -43,7 +61,16 @@ class FrontController extends Controller
     }
 
     public function post($post){
+     
         $post = Post::whereSlug($post)->first();
+        SEO::setTitle($post->title);
+        JsonLd::addImage("https://experiencias.contelferraez.com/img/post/{$post->urlfoto}");       
+        SEO::setDescription( $post->description);
+        SEO::opengraph()->setUrl("https://experiencias.contelferraez.com/blog/{$post->slug}");
+        SEO::setCanonical("https://experiencias.contelferraez.com/blog/{$post->slug}");
+        SEO::opengraph()->addProperty('type', 'articles');
+        SEO::twitter()->setSite('@contelexperiencias');
+        OpenGraph::addImage("https://experiencias.contelferraez.com/img/post/{$post->urlfoto}");
         $post->increment('visitas');
         return view('front.post',compact('post'));
     }

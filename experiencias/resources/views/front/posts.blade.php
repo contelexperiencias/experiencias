@@ -1,7 +1,7 @@
 @extends('layouts.appfront')
 
 @section('content')
-<div class="container bg-warning">
+<div class="container bg-white">
     
     <div class="row justify-content-center">
         <div class="col-sm-12 mt-5 mb-5 text-center">
@@ -15,9 +15,26 @@
         <ul>
             @foreach ($posts as $r)
             <li>
-                <div class="content">
-                    <h2 class="h4"><a href="/blog/{{$r->slug}}" class="text-danger text-decoration-none">{{$r->nombre}}</a></h2>
-                    <p class="text-white">{{$r->description}}</p>
+                <div class="">
+                <div class="wrap" style="padding-top: 2%;">
+               
+                <div class="row bg-primary" >
+
+                <div class=" col-sm-6" >
+                <img class="thumbnail" style="width:100%" src="/img/post/{{$r->urlfoto}}" alt="" >
+                </div>
+                <div class=" col-sm-6" >
+                <div class="store-wrapper">
+                   
+                   <h2 class="h4"><a href="/blog/{{$r->slug}}" class="text-danger text-decoration-none">{{$r->nombre}}</a></h2>
+                   <p class="text-black">{{$r->description}}</p>
+                   
+               </div>
+                </div>
+                </div>
+                
+               
+                </div>
                 </div>
             </li>
             

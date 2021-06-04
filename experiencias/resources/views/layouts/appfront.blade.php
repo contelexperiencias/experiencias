@@ -1,34 +1,20 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
+{!! SEO::generate() !!}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>@yield('title', $config->seo_title)</title>
-    <meta name="description" content="@yield('description', $config->seo_description)">
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="@yield('description',  $config->seo_description)"/>
-    <meta property="og:url" content="@yield('url','https://contelexperiencias.com')"/>   
-    <meta property="og:site_name" content="contelexperiencias.com" />
-    <meta property="og:image" content="@yield('image','https://contelexperiencias.com//img/configuracion/'.$config->seo_urlfoto)" />
-    <link rel="canonical" href="@yield('url','https://contelexperiencias.com')"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"> 
     <link rel="shortcut icon" href="/img/configuracion/{{$config->urlfavicon}}" type="image/png" />
-
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/buttons.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/estilos.css">
- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
-    
-    <!-- <link rel="stylesheet" href="/css/galeria.css">
-    <link href="https://cdn.jsdelivr.net/lightgallery/1.3.9/css/lightgallery.min.css" rel="stylesheet"> -->
-
-    <!-- <link rel="stylesheet" href="/css/custom.scss.css">
-    <link rel="stylesheet" href="/css/theme.scss.css"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="/css/estilos.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">    
+  
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-3.2.1.js"></script>
 	<script src="/js/script.js"></script>
@@ -36,9 +22,6 @@
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <!-- <script src="/js/map_charts1.js"></script>
-    <script src="/js/svg.js"></script> -->
-    <!-- <script src="/js/jquery.maphighlight.min.js"></script> -->
     <style>
   
         ::placeholder { color: white;  }
@@ -48,6 +31,9 @@
         .text-warning{ color:#FFC926 !important}
         .bg-warning{ background:#FFC926 !important}
         *{padding:0;margin:0;}
+
+
+        
 
         body{
             font-family: 'Muli', sans-serif;

@@ -148,7 +148,7 @@
    
           <section class="facet">
                 <!-- <a class="collapse-controle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">  App benifits tittle one goes here <span class="expand-icon-wrap"><i class="fa expand-icon"></i></span></a> -->
-                  <div class="facet-header">
+                  <div class="facet-header text-center">
                     <a type="button" class=" facet-toggle collapsed collapse-controle" data-toggle="collapse" href="#facetCheckboxes" aria-expanded="true" aria-controls="collapseExample"> <strong class="facet-title" style="color:black">Experiencia</strong> </a> 
                   </div>
                   <div class="row"> 
@@ -308,7 +308,7 @@
                                   <h3 class="text-center">{{$r->nombre}}</h3>
                                   <p>{{$r->description}}</p>
                                   <!-- <span class="small">{{$r->created_at->diffForHumans()}}</span> -->
-                                  <a href="/blog/{{$r->slug}}" class="btn btn-success btn-sm btn-xs btn-radius ">Leer</a>
+                                  <a href="/blog/{{$r->slug}}" class="btn btn-success btn-sm btn-xs btn-radius " style="background: #4B6D50;" >Leer</a>
                       </div>
                   </div>
                   @empty              
