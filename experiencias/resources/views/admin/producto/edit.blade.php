@@ -34,6 +34,10 @@
                     <label for="descripcion">INGRESE DESCRIPCIÓN</label>
                     {!! Form::textarea('descripcion',$producto->descripcion,['class'=>'form-control']) !!}
                 </div>
+                <div class="form-group" >
+                    <label for="detalle">INGRESE DETALLE</label>
+                    {!! Form::textarea('detalle',$producto->detalle ,['class'=>'form-control']) !!}
+                </div>
 
                 <div class="form-group">
                     <label for="nombre">INGRESE TARIFA</label>
@@ -93,6 +97,29 @@
                     <li> {!! Form::checkbox('Solo',  $producto->solo, ($producto->solo == 1) ? 'checked' : '') !!}<label for="solo">Solo</label></li>
                    
                 </ul> 
+                <span class="anchor"><strong>Categorias</strong></span>
+                @forelse ($categoriasAll as $item)   
+               @php $activochk=''; @endphp 
+               <ul class="items">                 
+                    @forelse ($relProductoCategoria as $it)            
+                
+                        @if($item->id == $it->categoria_id)
+                        @php $activochk='checked'; @endphp                   
+                        
+                       
+                       
+                        @endif
+                    @empty
+                    @endforelse
+                   
+                    <li> {!! Form::checkbox($item->slug, $item->id, $activochk) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li>         
+                </ul>                    
+          
+               @empty
+                       
+               @endforelse
+
+
               </div>                           
             </div> 
 
@@ -139,5 +166,6 @@
 </div>
 <script>
    CKEDITOR.replace( 'descripcion' );
+   CKEDITOR.replace( 'detalle' );
 </script>
 @endsection

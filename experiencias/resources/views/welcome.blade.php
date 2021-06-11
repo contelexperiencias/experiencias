@@ -119,12 +119,25 @@
           <a>{!!$item->descripcion!!}</a>
           
           <p> 
+          @forelse ($relacionProductoCategoria as $relCategoria)
+          @if( $relCategoria->producto_id ==  $item->id)
 
-          <a href="#" style="display: inline; font-size: 8px;" class="btn btn-info btn-xs btn-radius" role="button">Aventura</a>
-          <a href="#" style="display: inline; font-size: 8px;" class="btn btn-success btn-xs btn-radius" role="button">Naturaleza</a>
+          <a href="#" style="display: inline; font-size: 8px;" class="btn btn-info btn-xs btn-radius" role="button">{{$relCategoria->nombre}}</a>
+      
+          @endif
+
+          @empty
+        @endforelse
           @forelse ($relacionProductoDestino as $relitem)
+        
+     
           @if( $relitem->producto_id ==  $item->id)
+          
+         
+          
           <a id="{{$relitem->producto_id}}_{{$relitem->destino_id}}" destinos="{{$relitem->destino_id}}" style="display: inline; font-size: 8px;" class="btn btn-warning btn-xs btn-radius" role="button">{{$relitem->nombre}}</a>
+         
+      
           @endif
           @empty
         @endforelse
@@ -275,7 +288,7 @@
             <img src="/img/curiosidad/{{$item->urlfoto}}" class="withmin" alt="footer" style="width: 103%;">
               <div class=" carousel-caption ml-auto mr-auto mx-auto container row" style=" padding-top:2%; top:1px;">
                 <div class="text-center col-sm-12">
-                        <h2>{{$item->title}}</h2>
+                        <h3>{{$item->title}}</h3>
                         <h4>{{$item->description}}</h4>
                         <h4>{!!$item->descripcion!!}</h4>
 

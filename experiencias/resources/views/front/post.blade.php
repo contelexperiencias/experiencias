@@ -1,7 +1,7 @@
 @extends('layouts.appfront')
 
 @section('content')
-<div class="container bg-warning pb-5">
+<div class="container bg-white pb-5">
     <div class="row">
         <h1 class="p-3 text-danger text-center w-100 mt-5">{{$post->nombre}}</h1>
         <img src="/img/post/{{$post->urlfoto}}" class="img-fluid mx-auto d-block">

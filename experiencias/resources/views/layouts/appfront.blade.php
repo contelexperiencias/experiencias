@@ -449,22 +449,21 @@ margin: 0.5em;}
                 <div class="row">
                 <div class="col-lg-2" style="line-height: 0.5; margin-top:2%;">
                 </div>
-                  <div class="col-lg-4" style="line-height: 0.5; margin-top:1%;">
-                         <p style="text-align: left; color:black; " ><a class="estilo-x">Quienes somos</a></P>    
-                         <p style="text-align: left; color:black; "><a class="estilo-x">Ayuda</a></P>                      
-                         <p style="text-align: left; color:black; "><a class="estilo-x">Blog</a></P>                      
-                         <p style="text-align: left; color:black;"><a class="estilo-x">FAQ'S</a></P> 
-                        
+                  <div class="col-lg-4" style="line-height: 0.5; margin-top:1%;">                 
+                         <h6 style="text-align: left; color:black; " ><a class="">Quienes somos</a></h6>    
+                         <h6 style="text-align: left; color:black; "><a class="">Ayuda</a></h6>                      
+                         <h6 style="text-align: left; color:black; "><a class="">Blog</a></h6>                      
+                         <h6 style="text-align: left; color:black;"><a class="">FAQ'S</a></h6>                         
                   </div>
                       <div class="col-lg-4" style="line-height: 0.5; margin-top:5%;">
                       <div  style="text-align: right;">
-                          <a href="https://www.youtube.com/channel/UCsxX_6skG3RYIp8AtF1PZww">
+                          <a href="https://www.youtube.com/channel/UCsxX_6skG3RYIp8AtF1PZww" target="_blank">
                           <img style= " width: 12%;"src="/img/configuracion/youtube-logo.png" alt="">
                           </a>
-                          <a href="https://www.facebook.com/ContelExperiencias">
+                          <a href="https://www.facebook.com/ContelExperiencias"  target="_blank">
                           <img style= " width: 12%;"src="/img/configuracion/facebook-logo.png" alt="">
                           </a> 
-                          <a href="https://twitter.com/contelexperiencias">
+                          <a href="https://twitter.com/contelexperiencias" target="_blank">
                           <img style= "width: 12%;"  src="/img/configuracion/twitter-logo.png" >
                           </a>                          
                         </div>

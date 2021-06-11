@@ -32,6 +32,11 @@
                     <label for="descripcion">INGRESE DESCRIPCIÓN</label>
                     {!! Form::textarea('descripcion',NULL ,['class'=>'form-control']) !!}
                 </div>
+                <div class="form-group" >
+                    <label for="detalle">INGRESE DETALLE</label>
+                    {!! Form::textarea('detalle',NULL ,['class'=>'form-control']) !!}
+                </div>
+
 
                 
                 <div class="form-group">
@@ -56,7 +61,16 @@
                     <li> {!! Form::checkbox('Grupo',  '1') !!}<label for="Tulum">Grupo</label></li>
                     <li> {!! Form::checkbox('Solo',  '1') !!}<label for="Holbox">Solo</label></li>
                    
+                </ul>
+                <span class="anchor"><strong>Categorias</strong></span>
+                
+                @forelse ($categoriasAll as $item)
+                <ul class="items">
+                <li> {!! Form::checkbox($item->slug, $item->id) !!}<label for="{{$item->nombre}}"> {{$item->nombre}}</label></li>
                 </ul> 
+                            @empty
+                            @endforelse
+                          
               </div>                           
             </div> 
 
@@ -72,6 +86,28 @@
                     <img src="/img/producto/foto.jpg">
                     {!! Form::file('urlfoto') !!}
                 </div>
+                <div class="row">
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/foto.jpg">
+                    {!! Form::file('urlfoto2') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/foto.jpg">
+                    {!! Form::file('urlfoto3') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/foto.jpg">
+                    {!! Form::file('urlfoto4') !!}
+                </div>
+                <div class="form-group col-sm-3">
+                    <label for="urlfoto">IMAGEN (400 x 386 px)</label> <br>
+                    <img class="thumbnail w-100" src="/img/producto/foto.jpg">
+                    {!! Form::file('urlfoto5') !!}
+                </div>
+                </div>
 
             </div>
             {!! Form::submit('GUARDAR',['class'=>'btn btn-success']) !!}
@@ -80,6 +116,7 @@
     </div>
 </div>
 <script>
-    CKEDITOR.replace( 'descripcion' );
+    CKEDITOR.replace( 'descripcion','detalle' );
+    CKEDITOR.replace( 'detalle');
 </script>
 @endsection

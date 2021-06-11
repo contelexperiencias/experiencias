@@ -7,6 +7,7 @@ use App\Models\producto;
 use App\Models\categoria;
 use App\Models\Destino;
 use App\Models\RelacionProductoDestino;
+use App\Models\RelacionProductoCategoria;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 use Image;
@@ -18,15 +19,16 @@ class ProductoController extends Controller
             $destinos= Destino::get();
             $categorias= categoria::whereid(Session::get('categoria_id'))->get();
             $productos = producto::whereCategoria_id(Session::get('categoria_id'))->get();
-           
-            return view("admin.producto.index",compact('productos','categorias'));
+            $relacionProductoCategoria = RelacionProductoCategoria::join('productos','productos.id','=','relacion_producto_categorias.producto_id')->where('relacion_producto_categorias.categoria_id','=',Session::get('categoria_id'))->get(['productos.*']);
+            return view("admin.producto.index",compact('productos','categorias','relacionProductoCategoria'));
         }
     }
     public function create(){
         $destinos= Destino::all();
+        $categoriasAll = categoria::all();
         $categoria_id = Session::get('categoria_id');
         $categorias= categoria::whereid(Session::get('categoria_id'))->get();
-        return view("admin.producto.create",compact('categoria_id','categorias','destinos'));
+        return view("admin.producto.create",compact('categoria_id','categorias','destinos','categoriasAll'));
        
     }
     public function store(Request $request){
@@ -80,7 +82,30 @@ class ProductoController extends Controller
         $producto->grupo = $request->input('Grupo') ==null ? 0 : 1;
         $producto->solo = $request->input('Solo')==null ? 0 : 1;        
         $producto->save();
+        $this->createrelacionCategoria($request);
         $this->createrelacion($request);
+       
+        return redirect('/admin/producto');
+
+    }
+    public function createrelacionCategoria(Request $request){
+        $categorias =categoria::get();
+        $id = producto::all()->last();
+        echo $id->id;
+       echo  $request->nombre;
+        $longitud  = $categorias->count();
+        for($i=0; $i<$longitud; $i++)
+        {
+            
+            if( $request->input($categorias[$i]->slug) == $categorias[$i]->id)
+            {
+                $relProductoCategoria = new RelacionProductoCategoria;
+                $relProductoCategoria->producto_id =$id->id;
+                $relProductoCategoria->categoria_id = $request->input($categorias[$i]->slug);
+                $relProductoCategoria->save();           
+              echo $relProductoCategoria;
+            }     
+        }
         return redirect('/admin/producto');
 
     }
@@ -88,6 +113,7 @@ class ProductoController extends Controller
     public function createrelacion(Request $request){
         $destinos= Destino::get();
         $id = producto::all()->last();
+       
        
         echo $id->id;
        echo  $request->nombre;
@@ -106,11 +132,13 @@ class ProductoController extends Controller
                echo $relProductoDestino;
              }     
          }
+    
          return redirect('/admin/producto');
 
     }
     public function update(Request $request,$id){
         $destinos= Destino::get();
+        $categorias=categoria::get();
         $producto = producto::findOrFail($id);        
         $producto->fill($request->all());
         $foto_anterior     = $producto->urlfoto;
@@ -119,7 +147,9 @@ class ProductoController extends Controller
         $producto->grupo = $request->input('Grupo') ==null ? 0 : 1;
         $producto->solo = $request->input('Solo')==null ? 0 : 1;      
         $getRelProductoDestino = RelacionProductoDestino::whereproducto_id($id)->delete();
+        $getRelProductoCategoria = RelacionProductoCategoria::whereproducto_id($id)->delete();
         $longitud  = $destinos->count();
+        $longitudCategorias  = $categorias->count();
         for($i=0; $i<$longitud; $i++)
         {
             
@@ -129,6 +159,18 @@ class ProductoController extends Controller
                 $relProductoDestino->producto_id =$id;
                 $relProductoDestino->destino_id = $request->input($destinos[$i]->slug);
                 $relProductoDestino->save();           
+              
+            }     
+        }
+        for($i=0; $i<$longitudCategorias; $i++)
+        {
+            
+            if( $request->input($categorias[$i]->slug) == $categorias[$i]->id)
+            {
+                $relProductoCategoria = new RelacionProductoCategoria;
+                $relProductoCategoria->producto_id =$id;
+                $relProductoCategoria->categoria_id = $request->input($categorias[$i]->slug);
+                $relProductoCategoria->save();           
               
             }     
         }
@@ -198,10 +240,12 @@ class ProductoController extends Controller
         $destinos= Destino::all();
         $producto = producto::findOrFail($id);
         $categoria_id = Session::get('categoria_id');
+        $categoriasAll = categoria::all();
         $categorias= categoria::whereid(Session::get('categoria_id'))->get();
         $relProductoDestino = RelacionProductoDestino :: whereproducto_id($producto->id)->get();
+        $relProductoCategoria = RelacionProductoCategoria :: whereproducto_id($producto->id)->get();
         $activochk = 'checked';
-        return view('admin.producto.edit',compact('producto','categoria_id','categorias','destinos','relProductoDestino','activochk'));
+        return view('admin.producto.edit',compact('producto','categoria_id','categorias','destinos','relProductoDestino','activochk','categoriasAll','relProductoCategoria'));
     }
 
     public function destroyRelacion( $RelacionProductoDestino){
@@ -211,6 +255,9 @@ class ProductoController extends Controller
 
     }
     public function destroy($id){
+        $getRelProductoDestino = RelacionProductoDestino::whereproducto_id($id)->delete();
+        $getRelProductoCategoria = RelacionProductoCategoria::whereproducto_id($id)->delete();
+        
         $producto = producto::findOrFail($id);
         $borrar = public_path('/img/producto/'.$producto->urlfoto);
         if(file_exists($borrar)){ unlink(realpath($borrar)); }

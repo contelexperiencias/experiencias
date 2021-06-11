@@ -18,7 +18,7 @@ class RelacionProductoDestino extends Model
     public function producto(){
         return $this->hasMany("App\Producto");
     }
-    public function destino(){
+    public function cdstrgoria(){
         return $this->hasMany("App\destino");
     }
 }

@@ -14,7 +14,7 @@
                     <th>Acción</th>
                 </thead>
                 <tbody>
-                    @forelse ($productos as $item)
+                    @forelse ($relacionProductoCategoria as $item)
                     
                     <tr>
                         <td>{{$item->orden}}</td>

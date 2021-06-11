@@ -6,22 +6,34 @@
     <div class="row justify-content-center">
         <div class="col-sm-12 mt-5 mb-5 text-center">
             <h1 class="text-danger">BLOG</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsum, ducimus beatae facilis, qui fugiat inventore dicta magnam numquam, modi ad explicabo quaerat animi magni omnis unde illum vel. Earum!</p>
+            <h3>Consejos para viajar, experiencias, recomendaciones, ideas geniales y mas.....!</h3>
         </div>
     </div>
-
+    
+    <div class="store-wrapper">
+    <section class="products-list">
+<!-- 
    <div class="row pb-5">
     <div class="timeline p-5">
-        <ul>
+        <ul> -->
             @foreach ($posts as $r)
-            <li>
+
+            <div class="card  product-item" style="width: 18rem; border: solid 5px #E8C300;">
+            <img class="card-img-top mx-auto d-block w-100 width-75-blog  fluid rounded-circle thumbnail" style="width:100%" src="/img/post/{{$r->urlfoto}}" alt="" >            
+            <div class="card-body">
+            <h5 class="card-title text-center">{{$r->nombre}}</h5>
+            <p class="card-text text-justify">{{$r->description}}</p>
+            <a href="/blog/{{$r->slug}}" class="btn btn-primary" style="background: #4B6D50;">leer</a>
+            </div>
+            </div>
+            <!-- <li>
                 <div class="">
                 <div class="wrap" style="padding-top: 2%;">
                
-                <div class="row bg-primary" >
+                <div class="row bg-white" >
 
                 <div class=" col-sm-6" >
-                <img class="thumbnail" style="width:100%" src="/img/post/{{$r->urlfoto}}" alt="" >
+                <img class="mx-auto d-block w-100 width-75  fluid rounded-circle thumbnail" style="width:100%" src="/img/post/{{$r->urlfoto}}" alt="" >
                 </div>
                 <div class=" col-sm-6" >
                 <div class="store-wrapper">
@@ -36,14 +48,15 @@
                
                 </div>
                 </div>
-            </li>
+            </li> -->
             
             @endforeach
-
-        </ul>
+            </section>
+</div>
+        <!-- </ul>
     </div>
 
-   </div>
+   </div> -->
 
 </div>
 <style>
